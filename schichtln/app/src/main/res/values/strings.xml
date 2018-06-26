@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">schichtln</string>
+    <string name="title_activity_login_dialog">LoginDialog</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_plans">Pläne</string>
+    <string name="title_www">www</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

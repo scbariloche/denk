@@ -1,0 +1,119 @@
+package com.example.andenk.schichtln.modeladapter
+
+import android.content.Context
+import android.content.DialogInterface
+import android.view.View
+import android.view.View.GONE
+import android.widget.Toast
+import com.android.volley.Response
+import com.example.andenk.schichtln.helper.DBHelper
+import com.example.andenk.schichtln.helper.Helper
+import com.example.andenk.schichtln.pojos.Position
+import com.example.andenk.schichtln.pojos.Schicht
+import com.example.andenk.schichtln.webservice.WebService
+import com.google.gson.Gson
+import kotlinx.android.synthetic.main.display_user_list.view.*
+import org.json.JSONArray
+
+/**
+ * Created by andenk on 04.01.2018.
+ */
+class PopUpHelper {
+    val helper = Helper()
+    val ws = WebService()
+    val gson = Gson()
+    var activity: Context? = null
+
+
+    fun build_activate_popup(activity: Context, retView: View, item: Schicht, update: () -> Unit) {
+        retView.txt_popup_option1.text = "wieder aktivieren"
+        this.activity = activity
+        retView.txt_popup_option1.setOnClickListener({
+            helper.createAlert(
+                    activity,
+                    "${item.nickname} wird benachrichtigt und kann diese Änderung bestätigen",
+                    DialogInterface.OnClickListener(
+                            { d: DialogInterface, i: Int ->
+                                item.a_id = 2
+
+                                updateSchicht(item, { update() })
+                            }
+                    )
+            ).show()
+
+
+        })
+    }
+
+
+    fun build_delete_popup(activity: Context, retView: View, item: Schicht, update: () -> Unit) {
+        retView.txt_popup_option1.text = "streichen"
+        this.activity = activity
+        retView.txt_popup_option1.setOnClickListener({
+            helper.createAlert(
+                    activity!!,
+                    "Diese Schicht wird als 'gestrichen' markiert und verschwindet sobald ${item.nickname} bestätigt",
+                    DialogInterface.OnClickListener(
+                            { d: DialogInterface, i: Int ->
+                                item.a_id = 4
+                                updateSchicht(
+                                        item, { update() }
+                                )
+                            }
+                    )
+            ).show()
+
+
+        })
+    }
+
+
+    fun build_info_popup(activity: Context, retView: View, item: Schicht, update: () -> Unit) {
+
+        retView.txt_popup_message.visibility = GONE
+
+//        retView.txt_popup_option1.text = "streichen"
+//        this.activity = activity
+//        retView.txt_popup_option1.setOnClickListener({
+//            helper.createAlert(
+//                    activity!!,
+//                    "Diese Schicht wird als 'gestrichen' markiert und verschwindet sobald ${item.nickname} bestätigt",
+//                    DialogInterface.OnClickListener(
+//                            { d: DialogInterface, i: Int ->
+//                                item.a_id = 4
+//                                updateSchicht(
+//                                        item, { update() }
+//                                )
+//                            }
+//                    )
+//            ).show()
+//
+//
+//        })
+    }
+
+
+    private fun updateSchicht(item: Schicht, update: () -> Unit) {
+        ws.updateSchicht(
+                activity!!,
+                item,
+                Response.Listener {
+                    Toast.makeText(
+                            activity,
+                            "${item.nickname} wird benachrichtigt",
+                            Toast.LENGTH_SHORT).show()
+                    update()
+                },
+                Response.ErrorListener {
+                    Toast.makeText(
+                            activity,
+                            "ERROR",
+                            Toast.LENGTH_SHORT).show()
+                    update()
+
+                }
+        )
+    }
+
+
+}

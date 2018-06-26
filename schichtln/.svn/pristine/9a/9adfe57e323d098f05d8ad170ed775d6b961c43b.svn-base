@@ -1,0 +1,127 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sw720dp-v13_values-sw720dp-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\values-sw720dp-v13\\values-sw720dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,97,144,190",
+                        "endColumns": "41,46,45,48",
+                        "endOffsets": "92,139,185,234"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v14_values-v14.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\values-v14\\values-v14.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "201"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sw720dp-land-v13_values-sw720dp-land-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,98,146,192",
+                        "endColumns": "42,47,45,48",
+                        "endOffsets": "93,141,187,236"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-land_values-land.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,97,145,192,238",
+                        "endColumns": "41,47,46,45,48",
+                        "endOffsets": "92,140,187,233,282"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v11_values-v11.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\values-v11\\values-v11.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "187"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sw600dp-land-v13_values-sw600dp-land-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,98,145,191",
+                        "endColumns": "42,46,45,48",
+                        "endOffsets": "93,140,186,235"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,97,145,192,238,287,345,384,423,464,503,544,584,626,917",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,21,24",
+                        "endColumns": "41,47,46,45,48,57,38,38,40,38,40,39,41,12,12",
+                        "endOffsets": "92,140,187,233,282,340,379,418,459,498,539,579,621,912,1072"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sw600dp-v13_values-sw600dp-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,97,144,190",
+                        "endColumns": "41,46,45,48",
+                        "endOffsets": "92,139,185,234"
+                    }
+                }
+            ]
+        }
+    ]
+}

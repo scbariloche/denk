@@ -1,0 +1,57 @@
+package com.example.andenk.schichtln.helper
+
+import com.example.andenk.schichtln.pojos.State
+import com.example.andenk.schichtln.pojos.Day
+import com.example.andenk.schichtln.pojos.DayUser
+import com.example.andenk.schichtln.pojos.Type
+import com.example.andenk.schichtln.pojos.User
+import java.util.ArrayList
+
+/**
+ * Created by andenk on 04.12.2017.
+ */
+
+
+class Data {
+    var users: ArrayList<User> = ArrayList()
+
+
+    var days: ArrayList<Day> = ArrayList()
+//        get() = this.days
+
+    var daysusers: ArrayList<DayUser> = ArrayList()
+//        get() = this.daysusers
+
+    var states: ArrayList<State> = ArrayList()
+//        get() = this.states
+
+    var types: ArrayList<Type> = ArrayList()
+//        get() = this.types
+
+    constructor() {
+        users.add(User(1, "andi", "abc"))
+        users.add(User(2, "schichtler1", "def"))
+        users.add(User(2, "schichtler2", "ghi"))
+
+
+        days.add(Day(0, 1512388493444, "PV"))
+        days.add(Day(1, 1512488693444, ""))
+
+        states.add(State(0, "closed"))
+        states.add(State(1, "open"))
+        states.add(State(2, "wanted"))
+
+        types.add(Type(0, "Haupt"))
+        types.add(Type(1, "Neben"))
+        types.add(Type(2, "Zusatz"))
+
+        daysusers.add(DayUser(days.get(0), users.get(1), types.get(0), states.get(0)))
+        daysusers.add(DayUser(days.get(0), users.get(0), types.get(1), states.get(0)))
+        daysusers.add(DayUser(days.get(1), users.get(0), types.get(0), states.get(0)))
+        daysusers.add(DayUser(days.get(1), users.get(1), types.get(1), states.get(1)))
+        daysusers.add(DayUser(days.get(0), users.get(2), types.get(2), states.get(1)))
+
+    }
+
+
+}

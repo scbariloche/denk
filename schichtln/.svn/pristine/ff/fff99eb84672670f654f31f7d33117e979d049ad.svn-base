@@ -1,0 +1,363 @@
+package com.example.andenk.schichtln.gui
+
+import android.app.Activity
+import android.content.Context
+import android.content.DialogInterface
+import android.os.Bundle
+import android.os.StrictMode
+import android.support.v4.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.View.*
+import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.CalendarView
+import android.widget.Toast
+import com.android.volley.Response
+import com.example.andenk.schichtln.R
+import com.example.andenk.schichtln.helper.DBHelper
+import com.example.andenk.schichtln.helper.Helper
+import com.example.andenk.schichtln.modeladapter.PopUpHelper
+import com.example.andenk.schichtln.pojos.*
+import com.example.andenk.schichtln.webservice.WebService
+import com.google.gson.Gson
+import kotlinx.android.synthetic.main.display_user_list.view.*
+import kotlinx.android.synthetic.main.fragment_calendar.view.*
+import org.json.JSONArray
+import java.util.*
+import kotlin.collections.ArrayList
+
+
+/**
+ * A simple [Fragment] subclass.
+ * Activities that contain this fragment must implement the
+ * [CalendarFragment.OnFragmentInteractionListener] interface
+ * to handle interaction events.
+ * Use the [CalendarFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class CalendarFragment : Fragment() {
+
+    var cal: Calendar = Calendar.getInstance()
+    var ret: View? = null
+    val gson = Gson()
+    val helper = Helper()
+    val ws = WebService()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val SDK_INT = android.os.Build.VERSION.SDK_INT
+        if (SDK_INT > 8) {
+            val policy = StrictMode.ThreadPolicy.Builder()
+                    .permitAll().build()
+            StrictMode.setThreadPolicy(policy)
+
+        }
+    }
+
+
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+
+
+        ret = inflater!!.inflate(R.layout.fragment_calendar, container, false)
+
+        ret!!.calendarView.setOnDateChangeListener(MOnDateChangeListener())
+
+        ret!!.toggle_list_up_down.setOnClickListener(ToggleUpDownListener())
+        cal = Calendar.getInstance()
+        ret!!.calendarView.date = cal.timeInMillis
+
+        if (!DBHelper(activity).getCurrentUser()!!.is_staff) {
+            ret!!.btn_add_schicht.visibility = GONE
+        }
+        ret!!.btn_add_schicht.setOnClickListener(View.OnClickListener {
+
+            openAddSchichtDialog()
+
+        })
+
+
+        ret!!.calendar_swipe.setColorScheme(R.color.colorAccent, R.color.colorPrimary, R.color.colorPrimaryDark)
+        ret!!.calendar_swipe.setOnRefreshListener {
+            updateList()
+        }
+        updateList()
+        return ret
+    }
+
+    private fun openAddSchichtDialog() {
+
+        val ws = WebService()
+        val dayUserType = DayUserType()
+
+        ws.getDayByMillis(
+                activity,
+                cal.timeInMillis,
+                Response.Listener {
+                    var day = gson.fromJson(
+                            it.toString(),
+                            Day::class.java)
+                    dayUserType.d_id = day.id
+
+                    var types: ArrayList<Any> = ArrayList()
+                    ws.getAllTypes(activity, Response.Listener {
+                        onAllTypesArrived(it, types, ws, dayUserType)
+                    }, Response.ErrorListener {
+
+                    })
+                },
+                Response.ErrorListener {
+
+                }
+        )
+
+
+    }
+
+    private fun onAllTypesArrived(it: JSONArray?, types: ArrayList<Any>, ws: WebService, dayUserType: DayUserType) {
+        val helper = Helper()
+        var i = 0
+        var list = JSONArray(it.toString())
+        while (i < list.length()) {
+            var type = gson.fromJson(list.get(i).toString(), Type::class.java)
+            types.add(type)
+            i++
+        }
+        helper.createAlert(
+                activity,
+                cal.time.toString(),
+                types,
+                DialogInterface.OnClickListener(
+                        { d: DialogInterface,
+                          i_types: Int ->
+                            dayUserType.t_id = (types.get(i_types) as Type).id
+                            var users: ArrayList<Any> = ArrayList()
+                            val type = types.get(i_types) as Type
+                            ws.getUsersByP_Id(
+                                    activity,
+                                    type.p_id,
+                                    Response.Listener {
+                                        onUsersArrived(it, users, types, i_types, dayUserType, type)
+
+                                    },
+                                    Response.ErrorListener {
+
+                                    }
+                            )
+
+                        }
+                )
+        ).show()
+    }
+
+    private fun onUsersArrived(it: JSONArray, users: ArrayList<Any>, types: ArrayList<Any>, i_types: Int, dayUserType: DayUserType, type: Type) {
+        val helper = Helper()
+        var j = 0
+        var list = JSONArray(it.toString())
+        while (j < list.length()) {
+            var user = gson.fromJson(list.get(j).toString(), User::class.java)
+            users.add(user)
+            j++
+        }
+        helper.createAlert(
+                activity,
+                "${(types.get(i_types) as Type).description} am ${cal.time}",
+                users,
+                DialogInterface.OnClickListener(
+                        { d: DialogInterface,
+                          i_users: Int ->
+                            val user = users.get(i_users) as User
+                            dayUserType.u_id = user.id
+                            helper.createAlert(
+                                    activity,
+                                    "${type.description} am ${cal.time} an ${user.username} vergeben?",
+                                    DialogInterface.OnClickListener(
+                                            { d: DialogInterface,
+                                              i: Int ->
+                                                createSchicht(dayUserType, user)
+                                            })
+                            ).show()
+
+                        }
+                )
+        ).show()
+    }
+
+    private fun createSchicht(dayUserType: DayUserType, user: User) {
+        ws.createSchicht(
+                activity,
+                dayUserType,
+                Response.Listener {
+                    Toast.makeText(
+                            activity,
+                            "${user} wird benachrichtigt",
+                            Toast.LENGTH_SHORT).show()
+                    updateList()
+                },
+                Response.ErrorListener {
+                    Toast.makeText(
+                            activity,
+                            "ERROR",
+                            Toast.LENGTH_SHORT).show()
+                    updateList()
+                }
+        )
+    }
+
+
+    fun updateList() {
+
+        var list: ArrayList<Schicht> = ArrayList()
+        ws.getDayByMillis(
+                activity,
+                cal.timeInMillis,
+                Response.Listener {
+                    var day = gson.fromJson(
+                            it.toString(),
+                            Day::class.java
+                    )
+
+                    updateDayNote(day.note)
+                },
+                Response.ErrorListener {
+
+                }
+        )
+        getSchichtenByDay(cal.timeInMillis, Response.Listener {
+            var i = 0
+            var jsonArray: JSONArray = it as JSONArray
+            print(jsonArray)
+            while (i < jsonArray.length()) {
+                var schicht = gson.fromJson(jsonArray.get(i).toString(), Schicht::class.java)
+                list.add(schicht)
+                i++
+            }
+            ret!!.listview_details.adapter = DetailListAdapter(activity, list)
+            ret!!.calendar_swipe.isRefreshing = false
+        },
+                Response.ErrorListener {
+                    println(it.message)
+                    ret!!.calendar_swipe.isRefreshing = false
+                })
+
+
+    }
+
+    inner class MOnDateChangeListener : CalendarView.OnDateChangeListener {
+        /**
+         * Called upon change of the selected day.
+         *
+         * @param view The view associated with this listener.
+         * @param year The year that was set.
+         * @param month The month that was set [0-11].
+         * @param dayOfMonth The day of the month that was set.
+         */
+        override fun onSelectedDayChange(view: CalendarView?, year: Int, month: Int, dayOfMonth: Int) {
+
+            cal.set(year, month, dayOfMonth)
+
+            updateList()
+
+        }
+    }
+
+    private fun updateDayNote(day_note: String) {
+        if (!day_note.isBlank()) {
+            ret!!.day_note_container.visibility = VISIBLE
+            ret!!.txt_day_note.text = day_note
+        }
+    }
+
+    inner class ToggleUpDownListener : View.OnClickListener {
+        /**
+         * Called when a view has been clicked.
+         *
+         * @param v The view that was clicked.
+         */
+        override fun onClick(v: View?) {
+            if (ret!!.calendarView.visibility == View.GONE) {
+                ret!!.calendarView.visibility = View.VISIBLE
+            } else {
+                ret!!.calendarView.visibility = View.GONE
+            }
+
+
+        }
+    }
+
+    inner class DetailListAdapter(context: Context?,
+                                  objects: MutableList<Schicht>?) : ArrayAdapter<Schicht>(
+            context, 0, objects) {
+
+
+        var objects: MutableList<Schicht>? = objects
+        var context: Activity = context as Activity
+        var vi: LayoutInflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View? {
+            var retView: View
+            var item: Schicht = objects!!.get(position)
+            if (convertView == null) {
+                retView = vi.inflate(R.layout.display_user_list, null)
+
+                retView.display_userlist_tv1!!.text = item.nickname
+                retView.display_userlist_tv2!!.text = item.description
+
+                retView.txt_popup_message.text = "Diese Schicht..."
+                retView.txt_popup_option1.visibility = VISIBLE
+                if (item.dut_note.isBlank()) {
+                    retView.txt_popup_note.visibility = View.GONE
+                } else {
+                    retView.txt_popup_note.text = "${item.dut_note}"
+                }
+
+
+                if (DBHelper(activity).getCurrentUser()!!.is_staff) {
+                    if (item.a_id != 4) {
+                        PopUpHelper().build_delete_popup(activity, retView, item, { updateList() })
+                    } else {
+                        PopUpHelper().build_activate_popup(activity, retView, item, { updateList() })
+                    }
+                } else {
+                    if (item.dut_note.isBlank()) {
+                        retView.btn_more.visibility = INVISIBLE
+                    }
+                    PopUpHelper().build_info_popup(activity, retView, item, { updateList() })
+                }
+                retView.btn_more.setOnClickListener({ view ->
+                    if (retView.container_schicht.visibility == View.VISIBLE) {
+                        retView.container_schicht.visibility = View.GONE
+                        retView.container_popup.visibility = View.VISIBLE
+                    } else if (retView.container_popup.visibility == View.VISIBLE) {
+                        retView.container_schicht.visibility = View.VISIBLE
+                        retView.container_popup.visibility = View.GONE
+
+                    }
+
+                })
+                if (item.dut_note != null && item.dut_note.length > 9) {
+                    retView.display_userlist_tv3.text = item.dut_note.substring(0, 9) + "..."
+                } else {
+                    retView.display_userlist_tv3.text = item.dut_note
+                }
+                retView.acc_dot!!.setImageResource(activity.getResources().getIdentifier(item.color, "drawable", activity.getPackageName()));
+            } else {
+                retView = convertView
+            }
+            return retView
+        }
+
+
+    }
+
+
+    private fun getSchichtenByDay(millis: Long, listener: Response.Listener<JSONArray>, errorListener: Response.ErrorListener) {
+
+        val ws = WebService()
+
+        ws.getAllSchichtByDay(activity, millis, listener, errorListener)
+    }
+
+}

@@ -1,0 +1,191 @@
+package com.example.andenk.schichtln.gui
+
+import android.app.Activity
+import android.content.Context
+import android.content.DialogInterface
+import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.CalendarView
+import android.widget.TextView
+import android.widget.Toast
+import com.example.andenk.schichtln.R
+import com.example.andenk.schichtln.helper.Data
+import com.example.andenk.schichtln.helper.Helper
+import com.example.andenk.schichtln.pojos.DayUser
+import kotlinx.android.synthetic.main.display_user_list.view.*
+import kotlinx.android.synthetic.main.fragment_calendar.view.*
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.net.HttpURLConnection
+import java.net.URL
+import java.util.*
+import kotlin.collections.ArrayList
+import android.os.StrictMode
+import com.android.volley.*
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+
+
+/**
+ * A simple [Fragment] subclass.
+ * Activities that contain this fragment must implement the
+ * [CalendarFragment.OnFragmentInteractionListener] interface
+ * to handle interaction events.
+ * Use the [CalendarFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class CalendarFragment : Fragment() {
+
+    var cal: Calendar = Calendar.getInstance()
+    var ret: View? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val SDK_INT = android.os.Build.VERSION.SDK_INT
+        if (SDK_INT > 8) {
+            val policy = StrictMode.ThreadPolicy.Builder()
+                    .permitAll().build()
+            StrictMode.setThreadPolicy(policy)
+
+        }
+    }
+
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+
+
+        ret = inflater!!.inflate(R.layout.fragment_calendar, container, false)
+
+        ret!!.calendarView.setOnDateChangeListener(MOnDateChangeListener())
+
+        update()
+
+        ret!!.toggle_list_up_down.setOnClickListener(ToggleUpDownListener())
+        cal = Calendar.getInstance()
+        ret!!.calendarView.date = cal.timeInMillis
+        return ret
+    }
+
+    override fun onResume() {
+        super.onResume()
+        update()
+    }
+
+    fun update(): Unit {
+
+        var list: ArrayList<DayUser> = ArrayList()
+        var innerCal = Calendar.getInstance()
+        for (i in Data().daysusers) {
+            innerCal.timeInMillis = i.day.date
+            if (innerCal.get(Calendar.DAY_OF_YEAR) == cal.get(Calendar.DAY_OF_YEAR) &&
+                    innerCal.get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
+                list.add(i)
+            }
+
+
+        }
+
+
+        ret!!.listview_details.adapter = DetailListAdapter(activity, list)
+    }
+
+    inner class MOnDateChangeListener : CalendarView.OnDateChangeListener {
+        /**
+         * Called upon change of the selected day.
+         *
+         * @param view The view associated with this listener.
+         * @param year The year that was set.
+         * @param month The month that was set [0-11].
+         * @param dayOfMonth The day of the month that was set.
+         */
+        override fun onSelectedDayChange(view: CalendarView?, year: Int, month: Int, dayOfMonth: Int) {
+
+            cal.set(year, month, dayOfMonth)
+            update()
+
+        }
+    }
+
+    inner class ToggleUpDownListener : View.OnClickListener {
+        /**
+         * Called when a view has been clicked.
+         *
+         * @param v The view that was clicked.
+         */
+        override fun onClick(v: View?) {
+            if (ret!!.calendarView.visibility == View.GONE) {
+                ret!!.calendarView.visibility = View.VISIBLE
+            } else {
+                ret!!.calendarView.visibility = View.GONE
+            }
+
+
+        }
+    }
+
+    inner class DetailListAdapter(context: Context?,
+                                  objects: MutableList<DayUser>?) : ArrayAdapter<DayUser>(
+            context, 0, objects) {
+
+
+        var objects: MutableList<DayUser>? = objects
+        var context: Activity = context as Activity
+        var vi: LayoutInflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View? {
+            var holder: ViewHolder
+            var retView: View
+            var item: DayUser = objects!!.get(position)
+            if (convertView == null) {
+                retView = vi.inflate(R.layout.display_user_list, null)
+                holder = ViewHolder()
+
+                holder.tv1 = retView.display_userlist_tv1
+                holder.tv2 = retView.display_userlist_tv2
+
+                holder.tv2!!.text = item.user.username
+
+                holder.tv1!!.text = item.type.description
+
+                retView.tag = holder //error in this line
+
+            } else {
+                retView = convertView
+            }
+
+            retView.setOnClickListener({ v -> sendGet() })
+
+
+            return retView
+        }
+
+
+        inner class ViewHolder {
+            var tv1: TextView? = null
+            var tv2: TextView? = null
+        }
+    }
+
+    private fun sendGet() {
+        val url = "http://192.168.178.159:8080/SchichtAppWS/ws/isAlive"
+
+        var req = StringRequest(Request.Method.GET, url,
+                Response.Listener { Toast.makeText(activity,it,Toast.LENGTH_SHORT).show() },
+                Response.ErrorListener {
+                    Toast.makeText(activity,it.javaClass.simpleName,Toast.LENGTH_SHORT).show() }
+        )
+        execute(req)
+    }
+
+    fun execute(request: Request<String>) {
+        request.retryPolicy = DefaultRetryPolicy(15000, 1, 0f)
+        var reqQue: RequestQueue = Volley.newRequestQueue(activity)
+        reqQue.add(request)
+    }
+}

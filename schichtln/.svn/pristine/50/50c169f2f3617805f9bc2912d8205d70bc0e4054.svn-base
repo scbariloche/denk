@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\andenk\\gson-master\\private\\grade_it\\schichtln\\extendedCalendarView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,97,145,192,238,287,345,384,423,464,503,544,584,626,917",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,21,24",
+                        "endColumns": "41,47,46,45,48,57,38,38,40,38,40,39,41,12,12",
+                        "endOffsets": "92,140,187,233,282,340,379,418,459,498,539,579,621,912,1072"
+                    }
+                }
+            ]
+        }
+    ]
+}

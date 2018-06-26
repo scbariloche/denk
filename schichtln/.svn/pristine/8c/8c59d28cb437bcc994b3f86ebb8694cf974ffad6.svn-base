@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#600001</color>
+    <color name="colorAccent">#ffcc66</color>
+    <color name="colorGreen">#26f256</color>
+    <color name="redAccent">#de0002</color>
+    <array name="refresh_colors">
+        <item>@color/colorAccent</item>
+        <item>@color/colorPrimaryDark</item>
+        <item>@color/colorPrimary</item>
+    </array>
+    <color name="greyish">#901a1a1a</color>
+    <color name="milky">#90ffffff</color>
+</resources>

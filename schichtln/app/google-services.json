@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "522388764363",
+    "firebase_url": "https://schichtln-c1aa2.firebaseio.com",
+    "project_id": "schichtln-c1aa2",
+    "storage_bucket": "schichtln-c1aa2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522388764363:android:186c57031252cf26",
+        "android_client_info": {
+          "package_name": "com.example.andenk.schichtln"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522388764363-h0n23p3jc8t8cvjs9v7v2k7lart03ugf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.andenk.schichtln",
+            "certificate_hash": "4d6276843b3a5f6f8f4374be2681d269cba785ee"
+          }
+        },
+        {
+          "client_id": "522388764363-fl4sfl7b0d8ma3icnfncflqsp1gion4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIN3aRuQN8tcQFGH5H51JpEQrpXUundUo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522388764363-fl4sfl7b0d8ma3icnfncflqsp1gion4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

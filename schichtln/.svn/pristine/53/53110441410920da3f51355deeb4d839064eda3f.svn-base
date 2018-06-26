@@ -1,0 +1,96 @@
+package com.example.andenk.schichtln.gui
+
+import android.app.Activity
+import android.os.Bundle
+import android.view.inputmethod.EditorInfo
+import android.widget.Toast
+import com.android.volley.Response
+import com.example.andenk.schichtln.R
+import com.example.andenk.schichtln.pojos.User
+import com.example.andenk.schichtln.webservice.WebService
+import com.google.gson.Gson
+import kotlinx.android.synthetic.main.dialog_login.*
+import com.example.andenk.schichtln.pojos.Position
+import org.json.JSONArray
+import java.security.MessageDigest
+
+
+class LoginDialog : Activity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+
+        super.onCreate(savedInstanceState)
+        setFinishOnTouchOutside(false)
+        val gson = Gson()
+        setContentView(R.layout.dialog_login)
+
+        txt_passwd.setOnEditorActionListener() { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                val ws = WebService()
+                var sha = sha256(txt_passwd.text.toString())
+                print(sha256(txt_passwd.text.toString()))
+                ws.login(this@LoginDialog,
+                        txt_username.text.toString(),
+                        sha256(txt_passwd.text.toString()),
+                        Response.Listener {
+                            var user = gson.fromJson(
+                                    it.toString(),
+                                    User::class.java)
+                            intent.putExtra("user", user)
+                            setResult(RESULT_OK, intent)
+                            finish()
+
+
+                        },
+                        Response.ErrorListener {
+
+                            Toast.makeText(this@LoginDialog, "sorri Server down/no inet/wrong pw", Toast.LENGTH_SHORT).show()
+                        })
+                true
+            } else {
+                false
+            }
+        }
+    }
+
+    fun sha512(input: String) = hashString("SHA-512", input)
+
+    fun sha256(input: String) = hashString("SHA-256", input)
+
+    fun sha1(input: String) = hashString("SHA-1", input)
+
+    /**
+     * Supported algorithms on Android:
+     *
+     * Algorithm	Supported API Levels
+     * MD5          1+
+     * SHA-1	    1+
+     * SHA-224	    1-8,22+
+     * SHA-256	    1+
+     * SHA-384	    1+
+     * SHA-512	    1+
+     */
+    private fun hashString(type: String, input: String): String {
+        val HEX_CHARS = "0123456789ABCDEF"
+        val bytes = MessageDigest
+                .getInstance(type)
+                .digest(input.toByteArray())
+        val result = StringBuilder(bytes.size * 2)
+
+        bytes.forEach {
+            val i = it.toInt()
+            result.append(HEX_CHARS[i shr 4 and 0x0f])
+            result.append(HEX_CHARS[i and 0x0f])
+        }
+
+        return result.toString()
+    }
+
+    override fun onBackPressed() {
+        intent.putExtra("user", User())
+        setResult(RESULT_CANCELED, intent)
+        finish()
+    }
+
+}

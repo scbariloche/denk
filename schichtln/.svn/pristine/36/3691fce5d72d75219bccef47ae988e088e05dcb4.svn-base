@@ -1,0 +1,182 @@
+package com.example.andenk.schichtln.gui
+
+import android.content.Context
+import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.support.v4.widget.SwipeRefreshLayout
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import com.android.volley.Response
+import com.example.andenk.schichtln.R
+import com.example.andenk.schichtln.helper.DBHelper
+import com.example.andenk.schichtln.helper.Helper
+import com.example.andenk.schichtln.modeladapter.PopUpHelper
+import com.example.andenk.schichtln.pojos.Position
+import com.example.andenk.schichtln.pojos.Schicht
+import com.example.andenk.schichtln.webservice.WebService
+import com.google.gson.Gson
+import kotlinx.android.synthetic.main.display_user_list.view.*
+import kotlinx.android.synthetic.main.fragment_position_list.view.*
+import org.json.JSONArray
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+
+
+/**
+ * A simple [Fragment] subclass.
+ * Activities that contain this fragment must implement the
+ * [PositionFragment.OnFragmentInteractionListener] interface
+ * to handle interaction events.
+ * Use the [PositionFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class PositionFragment : Fragment() {
+    val helper = Helper()
+    val ws = WebService()
+    var position = Position()
+    var schichtListView: ListView? = null
+    var swipeContainer: SwipeRefreshLayout? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+
+        var view: View = inflater!!.inflate(R.layout.fragment_position_list, container, false)
+        schichtListView = view.list_position_schicht
+        position = arguments.getSerializable("position") as Position
+        swipeContainer = view.position_swipe_container
+
+        view.title_position.text = position.description
+        updateList()
+        view.position_swipe_container.setColorScheme(R.color.colorAccent, R.color.colorPrimary, R.color.colorPrimaryDark)
+        view.position_swipe_container.setOnRefreshListener({
+            updateList()
+        })
+
+
+        return view
+    }
+
+    val gson = Gson()
+
+
+    fun updateList() {
+
+
+        var list: ArrayList<Schicht> = ArrayList()
+
+        getSchichtenByPosition(position,
+                Response.Listener {
+                    var i = 0
+                    var jsonArray: JSONArray = it as JSONArray
+                    print(jsonArray)
+                    while (i < jsonArray.length()) {
+                        var schicht = gson.fromJson(jsonArray.get(i).toString(), Schicht::class.java)
+                        list.add(schicht)
+                        i++
+                    }
+                    schichtListView?.adapter = PositionListAdapter(activity, list)
+                    swipeContainer!!.isRefreshing = false
+                },
+                Response.ErrorListener {
+                    println(it.message)
+                    swipeContainer!!.isRefreshing = false
+                })
+
+
+    }
+
+
+    inner class PositionListAdapter(context: Context?,
+                                    objects: MutableList<Schicht>?) : ArrayAdapter<Schicht>(context, 0, objects) {
+
+
+        var objects: MutableList<Schicht>? = objects
+        var vi: LayoutInflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View? {
+            var retView: View
+            var item: Schicht = objects!!.get(position)
+            if (convertView == null) {
+                retView = vi.inflate(R.layout.display_user_list, null)
+
+
+                retView.display_userlist_tv2!!.text = item.description
+
+                var sdf = SimpleDateFormat("EE dd.MM.yy")
+
+                var date = Date(item.date)
+
+                if (item.dut_note.isBlank()) {
+                    retView.txt_popup_note.visibility = View.GONE
+                } else {
+                    retView.txt_popup_note.text = "${item.dut_note}"
+                }
+
+                retView.display_userlist_tv1!!.text = sdf.format(date)
+                if (position - 1 > -1) {
+                    if (objects!!.get(position - 1).date == item.date) {
+                        retView.display_userlist_tv1!!.text = " "
+                    }
+                }
+
+                retView.txt_popup_message.text = "Diese Schicht..."
+                retView.txt_popup_option1.visibility = View.VISIBLE
+                if (DBHelper(activity).getCurrentUser()!!.is_staff) {
+                    if (item.a_id != 4) {
+                        PopUpHelper().build_delete_popup(activity, retView, item, { updateList() })
+                    } else {
+                        PopUpHelper().build_activate_popup(activity, retView, item, { updateList() })
+                    }
+                } else {
+                    if (item.dut_note.isBlank()) {
+                        retView.btn_more.visibility = View.INVISIBLE
+                    }
+                    PopUpHelper().build_info_popup(activity, retView, item, { updateList() })
+                }
+                retView.btn_more.setOnClickListener({ view ->
+                    if (retView.container_schicht.visibility == View.VISIBLE) {
+                        retView.container_schicht.visibility = View.GONE
+                        retView.container_popup.visibility = View.VISIBLE
+                    } else if (retView.container_popup.visibility == View.VISIBLE) {
+                        retView.container_schicht.visibility = View.VISIBLE
+                        retView.container_popup.visibility = View.GONE
+
+                    }
+
+                })
+
+
+                retView.display_userlist_tv3!!.text = item.nickname
+                retView.acc_dot!!.setImageResource(activity.getResources().getIdentifier(item.color, "drawable", activity.getPackageName())); } else {
+                retView = convertView
+            }
+
+
+
+
+
+            return retView
+        }
+
+
+    }
+
+
+    private fun getSchichtenByPosition(position: Position, listener: Response.Listener<JSONArray>, errorListener: Response.ErrorListener) {
+
+        val ws = WebService()
+
+        ws.getAllSchichtByPosition(activity, position, listener, errorListener)
+    }
+
+
+}

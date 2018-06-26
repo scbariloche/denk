@@ -1,0 +1,254 @@
+package com.example.andenk.schichtln.webservice
+
+import android.content.Context
+import com.android.volley.DefaultRetryPolicy
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.example.andenk.schichtln.pojos.*
+import com.google.gson.Gson
+import org.json.JSONArray
+import org.json.JSONObject
+import java.util.*
+
+/**
+ * Created by andreas on 18.12.2017.
+ */
+class WebService {
+    constructor()
+
+    val jsonData = "?data="
+    val gson = Gson()
+
+
+// emulator loopback to host
+//    val ip = "10.0.2.2:8080"
+
+    // Batman @ casetta
+//    val ip = "192.168.178.24:8080"
+
+    // PC @ dagda
+//    val ip = "192.168.178.138:8080"
+
+    // PC @ other
+//    val ip = "10.148.58.212:8080"
+
+    // raspi @ home over dynDNS
+    val ip = "dugon.de:8088"
+
+    //dynDNS dugon.de
+//    val ip = "dugon.de"
+    var url = "http://$ip/SchichtAppWS/ws/"
+
+
+    fun getAllSchichtByDay(context: Context, millis: Long, listener: Response.Listener<JSONArray>, errorListener: Response.ErrorListener) {
+
+
+        var req = JsonArrayRequest(Request.Method.GET, url + "getAllSchichtByDay" + jsonData + millis,
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun getDayByMillis(context: Context, millis: Long, listener: Response.Listener<JSONObject>, errorListener: Response.ErrorListener) {
+
+
+        var req = JsonObjectRequest(Request.Method.GET, url + "getDayByMillis" + jsonData + millis,
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun getAllSchichtByUser(context: Context, user: User, listener: Response.Listener<JSONArray>, errorListener: Response.ErrorListener) {
+
+
+        var req = JsonArrayRequest(Request.Method.GET, url + "getAllSchichtByUser" + jsonData + gson.toJson(user),
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun getAllSchichtByPosition(context: Context, position: Position, listener: Response.Listener<JSONArray>, errorListener: Response.ErrorListener) {
+
+
+        var req = JsonArrayRequest(Request.Method.GET, url + "getAllSchichtByPosition" + jsonData + gson.toJson(position),
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun getOpenSchichtByUser(context: Context, user: User, listener: Response.Listener<JSONArray>, errorListener: Response.ErrorListener) {
+
+
+        var req = JsonArrayRequest(Request.Method.GET, url + "getOpenSchichtByUser" + jsonData + gson.toJson(user),
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun setSchichtOpen(context: Context, schicht: Schicht, listener: Response.Listener<JSONObject>, errorListener: Response.ErrorListener) {
+
+
+        var req = JsonObjectRequest(Request.Method.GET, url + "setSchichtOpen" + jsonData + gson.toJson(schicht),
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun setSchichtAccepted(context: Context, schicht: Schicht, listener: Response.Listener<JSONObject>, errorListener: Response.ErrorListener) {
+
+
+        var req = JsonObjectRequest(Request.Method.GET, url + "setSchichtAccepted" + jsonData + gson.toJson(schicht),
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun deleteSchicht(context: Context, schicht: Schicht, listener: Response.Listener<JSONObject>, errorListener: Response.ErrorListener) {
+
+
+        var req = JsonObjectRequest(Request.Method.GET, url + "deleteSchicht" + jsonData + gson.toJson(schicht),
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun setSchichtTakenByUser(context: Context, schicht: Schicht, user: User, listener: Response.Listener<JSONObject>, errorListener: Response.ErrorListener) {
+
+
+        val json = JSONObject()
+        var userjson = gson.toJson(user)
+        var schichtjson = gson.toJson(schicht)
+        System.out.print(schichtjson.toString())
+        json.put("user", userjson.toString())
+        json.put("schicht", schichtjson.toString())
+
+
+        var req = JsonObjectRequest(Request.Method.GET, url + "setSchichtTakenByUser" + jsonData + json,
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun getPositionsByUser(context: Context, user: User, listener: Response.Listener<JSONArray>, errorListener: Response.ErrorListener) {
+
+
+        var req = JsonArrayRequest(Request.Method.GET, url + "getAllPositionsByUser" + jsonData + gson.toJson(user),
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun getAllTypes(context: Context, listener: Response.Listener<JSONArray>, errorListener: Response.ErrorListener) {
+        var req = JsonArrayRequest(Request.Method.GET, url+"getAllTypes",
+                listener, errorListener
+        )
+        execute(req, context)
+    }
+
+
+    fun execute(request: Request<String>, context: Context) {
+        request.retryPolicy = DefaultRetryPolicy(1500, 3, 0f)
+        var reqQue: RequestQueue = Volley.newRequestQueue(context)
+        reqQue.add(request)
+    }
+
+    fun execute(request: JsonObjectRequest, context: Context) {
+        request.retryPolicy = DefaultRetryPolicy(1500, 3, 0f)
+        var reqQue: RequestQueue = Volley.newRequestQueue(context)
+        reqQue.add(request)
+    }
+
+    fun execute(request: JsonArrayRequest, context: Context) {
+        request.retryPolicy = DefaultRetryPolicy(1500, 3, 0f)
+        var reqQue: RequestQueue = Volley.newRequestQueue(context)
+        reqQue.add(request)
+    }
+
+    fun getUsersByP_Id(context: Context, p_id: Int, listener: Response.Listener<JSONArray>, errorListener: Response.ErrorListener) {
+        var req = JsonArrayRequest(Request.Method.GET, url + "getUsersByP_Id" + jsonData + "$p_id",
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun getUserByU_Id(context: Context, u_id: String, listener: Response.Listener<JSONObject>, errorListener: Response.ErrorListener) {
+        var req = JsonObjectRequest(Request.Method.GET, url + "getUserByU_Id" + jsonData + "$u_id",
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun login(context: Context, username: String, passwd: String, listener: Response.Listener<JSONObject>, errorListener: Response.ErrorListener) {
+
+        val json = JSONObject()
+
+        json.put("username", username)
+        json.put("passwd", passwd)
+
+
+        var req = JsonObjectRequest(Request.Method.GET, url + "login" + jsonData + json,
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun offerSchichtToUser(context: Context, schicht: Schicht, user: User, listener: Response.Listener<JSONObject>, errorListener: Response.ErrorListener) {
+
+        val json = JSONObject()
+        var userjson = gson.toJson(user)
+        var schichtjson = gson.toJson(schicht)
+        json.put("user", userjson.toString())
+        json.put("schicht", schichtjson.toString())
+
+
+        var req = JsonObjectRequest(Request.Method.GET, url + "offerSchichtToUser" + jsonData + json,
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun updateSchicht(context: Context, schicht: Schicht, listener: Response.Listener<JSONObject>, errorListener: Response.ErrorListener) {
+
+        var json = gson.toJson(schicht)
+
+
+        var req = JsonObjectRequest(Request.Method.POST, url + "updateSchicht" + jsonData + json,
+                listener,
+                errorListener
+        )
+        execute(req, context)
+    }
+
+    fun createSchicht(context:Context, dayUserType: DayUserType, listener: Response.Listener<JSONObject>, errorListener: Response.ErrorListener){
+        val json =gson.toJson(dayUserType)
+
+        var req = JsonObjectRequest(Request.Method.POST, url + "createSchicht" + jsonData + json,
+                listener,
+                errorListener
+        )
+        execute(req, context)
+
+
+    }
+
+
+}
