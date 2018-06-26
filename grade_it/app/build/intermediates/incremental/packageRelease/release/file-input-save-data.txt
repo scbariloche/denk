@@ -1,0 +1,15 @@
+#Internal package file, do not edit.
+#Fri Mar 02 04:02:38 CET 2018
+1.base=C\:\\Users\\andreas\\Codes\\Android\\grade_it\\app\\build\\intermediates\\transforms\\dex\\release\\0
+2.path=crashlytics-build.properties
+0.baseType=DIRECTORY
+2.base=C\:\\Users\\andreas\\Codes\\Android\\grade_it\\app\\build\\intermediates\\assets\\release
+2.set=ASSET
+1.baseType=DIRECTORY
+count=3
+1.set=DEX
+0.path=fonts/Roboto-Medium.ttf
+0.set=ASSET
+0.base=C\:\\Users\\andreas\\Codes\\Android\\grade_it\\app\\build\\intermediates\\assets\\release
+2.baseType=DIRECTORY
+1.path=classes.dex

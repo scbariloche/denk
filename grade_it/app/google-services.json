@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "581286605875",
+    "firebase_url": "https://grade-it.firebaseio.com",
+    "project_id": "grade-it",
+    "storage_bucket": "grade-it.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:581286605875:android:a9030a4934a5d61e",
+        "android_client_info": {
+          "package_name": "de.thinkad.grade_it"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "581286605875-72n0hk57pp06oufg5b4g9t8tfa7shbs2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.thinkad.grade_it",
+            "certificate_hash": "279e21f9e475f4dc5582958ea26f197e3b4e303d"
+          }
+        },
+        {
+          "client_id": "581286605875-dg0e485i05qmf77vbnprf2qf36iancrb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeschgMvMcaNe8yUaIUS57kwczKfZXCd0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "581286605875-dg0e485i05qmf77vbnprf2qf36iancrb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

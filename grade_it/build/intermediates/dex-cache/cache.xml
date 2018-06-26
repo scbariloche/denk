@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\27.0.2\b9ef4342c934a1a8b107506273dc8061662a322\support-annotations-27.0.2.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="0b9ef4342c934a1a8b107506273dc8061662a322">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\532d7f86740f20769cd72672b6f8335f\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="ed6560f31a6a40b5965f5879d8f2eab1f68def05">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\26.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\transition-27.0.2.aar\4455c4b7259c0efa85c0132f36194cca\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="a5fa2e3704f51b30b7b47e12a3a2909728799583">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\27.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\47.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.6.2.aar\d973ec2e2ef2f9374ae90b5fc131afc6\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="108c3cdbdb89a05d388a170bd3549b1e43ad6d54">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\17.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\firebase-common-11.6.2.aar\f4abe86c27973b39b68f57376e38cf66\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="4d7b1a23cecd2855bdfbd8266650d140e9e6977c">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\19.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\31.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.6.2.aar\a0daa5dde1d01f216c99ae747f9fb525\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="fd6ae8c61bd548b134265ef3c37807d4efcc854c">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\21.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.4.1.aar\9fc398377a74d094933901da1a5a29d4\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="e234aabd1c11160b5f76f50c5c53a324be322ede">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\34.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\ebd3b11334d46982285dfbed7a8eb00a\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="ac2ce6027755bcf49442e70597bec0feb9064f68">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\28.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.6.2.aar\f03efd11663a5dcd77247719ba76a2c5\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="d7181496c7bb670060ea4e3dda17e22c3d25f5bd">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\play-services-gass-11.6.2.aar\28cfbb45c5074dac944d442c1bacf1a2\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="d1d560a95d54ba8c68a4867eff03c812ff308898">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\15.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.6.2.aar\f26e1da56ad7d9e6df437669db3abb66\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="a0b869be21f2e39e9b337bec395d9a7e111da21e">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\16.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.3\7d7f60c4783872861222166f6164215f8951c7b1\common-1.0.3.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="7d7f60c4783872861222166f6164215f8951c7b1">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\46.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\modules-2\files-2.1\com.google.gms\google-services\3.1.2\1fc9eb41c1937a7364345d13349682db7785546e\google-services-3.1.2.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="1fc9eb41c1937a7364345d13349682db7785546e">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\11.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\beta-1.2.7.aar\6a430ccf775c4de9d0fb43963ef492cb\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="5a743d0934e90e7f26d75a2463142c4b884b2981">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\33.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\support-v13-27.0.0.aar\285b44237f21f8954eabe93af1213875\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="49e3859c5fa46728eed16dfd47b1e09d20e82f2e">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\2e3b652533273abf977169ef1b94ad28\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="caa03787689212c10939f308a55a8dc8a3333ed2">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\design-27.0.2.aar\36422d5517e98c099fd1cc1749c3db91\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="031cc16b7b6e77b3c050134ecab9fa5c2640a069">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\1a1a7b6693ef387c055c75084ec883f7\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="b432e82447a3af781e927b9ba0bbb9fe2a496d4a">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\29.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\ff11b6f1df564682fc11b72f0455c844\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="25c8cb628374f9a2d59ff9e1172753751e9a9f84">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v3.0.2\5d4eb08a326bdbd7fbbddc769666898c9936b282\MPAndroidChart-v3.0.2.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="5d4eb08a326bdbd7fbbddc769666898c9936b282">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\45402200ba260e249db2abf4751a5d8d\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="d7cc5473b9cf4ea159a263cd477fb3ecb2987b96">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\45.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.6.2.aar\400a90d37c4532126f1bf061118611c1\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="225f093d9a041f8206d812d3055a886a816ac365">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.6.2.aar\4cf0dc93213a7e0c332eaa79962aa67e\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="b0ae7bfe4591746f6491a4a270ee56712062d1ca">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\18.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\0af6fafab6dcf0705a513af9a3bc9fe9\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\fabric-1.4.1.aar\be231fdf21dd5616248d83cef693280b\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="d5ee4b7829f6ec48400e678cc969176f455cb14c">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\36.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.0.2.aar\1d46e29fe20fff07f37c4d3eff7d4b0d\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="9296d6f092fcdba4fafb6ac26546a39babdab46a">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\24.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\materialdatetimepicker-3.4.0.aar\ddf9842d00342128ebc5258c685b3688\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="736f4577f97a2e696455c53998c32803567a8a3d">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\f115ac8cd5012bc9d5ad010f2dd3077c\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="618f75fe11febf263e3234c7da7dc892232a5608">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\25.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\play-services-ads-11.6.2.aar\e5fdecd99e8acaf1bc373bece47b77bc\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="d3e264c1846f21d0c8a985e856229dacb81dfb58">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\colorpicker-0.0.13.aar\0a65ac0b29cb086887d4f3c826d4adc7\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="1e82f4dd0ec0adfbd0592a964c560662e856f3d8">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\crashlytics-2.7.1.aar\296744604e6bd842a5436f60a25cbc8b\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="cc343a74c077ec04bbedf0c88f8a5473306edc78">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\45ce6365047821d3b7d65aa80e68e2e4\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="fe3916317a699975bcce0cba2d13fd2d8cf88922">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\answers-1.4.1.aar\e1d9d6de3d05aa152afe29339d06437f\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="13430a12bb2eb82b397f10f61fe1f6989279c6bd">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\35.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\547a46627b992e3de3013a2bd57e689b\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="04cd0cacbedcb338f64665b88bad64d145325fbd">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\andreas\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\31ad70fd89c9ffc31fea309c21116127\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="27.0.0"
+        sha1="bcd0bcdef85b31a656af76e39c0c95ce70800772">
+        <dex dex="C:\Users\andreas\Codes\Android\grade_it\app\build\intermediates\transforms\preDex\release\22.jar" />
+    </item>
+
+</items>

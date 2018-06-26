@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">grade_it</string>
+    <string name="title_grades">Noten</string>
+    <string name="title_exams">Prüfungen</string>
+    <string name="title_settings">Einstellungen</string>
+    <string name="ok">ok</string>
+    <string name="abbruch">x</string>
+    <string name="noSubjectData">Tippe auf das plus-Symbol um ein Fach hinzuzufügen.</string>
+    <string name="noGradeData">Tippe auf das plus-Symbol um eine Note hinzuzufügen.</string>
+    <string name="noExamData">Tippe auf das plus-Symbol um eine Prüfung hinzuzufügen.</string>
+    <string name="addSubjectFirst">Füge zunächst ein neues Fach hinzu</string>
+    <string name="addExamFirst">Füge zunächst eine neue Prüfung hinzu</string>
+    <string name="delete">wirklich löschen?</string>
+    <string name="delete_last">Bitte lösche mich nicht!\nIch bin der letzte meiner Art</string>
+    <string name="addGroup">neue Gruppe</string>
+    <string name="weightExampleName"> bisher ohne Bedeutung</string>
+    <!-- Schulufgabe 2:1 mündliche; Schulaufgaben und mündliche jeweils  untereinander einfach-->
+    <string name="weightExample">{length: \"2\"; group0:{name0:\"große LN\"; weight0:\"2\"; group0:{cateID:\"0\"; value:\"1\"; grades:[{\"grades\":\"12\"}] }" +"}; group1:{length: \"3\"; name0:\"große LN\"; weight0:\"2\"; group0:{cateID:\"1\"; value:\"1\"; grades:[{\"grades\":\"grades\":\"8\"}] }" +"; name1:\"große LN\"; weight1:\"2\"; group1:{cateID:\"2\"; value:\"1\"; grades:[{\"grades\":\"3\"}] }" +"; name2:\"große LN\"; weight2:\"2\"; group2:{cateID:\"3\"; value:\"1\"; grades:[{\"grades\":\"15\"}] }} }</string>
+    <string name="doubletap2close">tippe nochmal um die app zu schließen</string>
+</resources>
