@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.thinkad.grade_it"
-    android:versionCode="3"
-    android:versionName="0.99" >
+    android:versionCode="4"
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="17"
@@ -53,12 +53,10 @@
         <activity
             android:name="de.thinkad.grade_it.gui.dialogs.SelectWeightDialog"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
         <activity
             android:name="de.thinkad.grade_it.gui.dialogs.CreateWeightDialog"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
         <activity
             android:name="de.thinkad.grade_it.gui.dialogs.ImprintDialog"
@@ -136,6 +134,9 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="android.arch.lifecycle.VERSION"
+            android:value="27.0.0-SNAPSHOT" />
     </application>
 
 </manifest>

@@ -20,7 +20,7 @@ public final class R {
         public static final int radio = 0x7f0900c0;
         public static final int text = 0x7f0900f4;
         public static final int text2 = 0x7f0900f5;
-        public static final int wrap_content = 0x7f090125;
+        public static final int wrap_content = 0x7f090126;
     }
     public static final class integer {
         public static final int google_play_services_version = 0x7f0a0007;

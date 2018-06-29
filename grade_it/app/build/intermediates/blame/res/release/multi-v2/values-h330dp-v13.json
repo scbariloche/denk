@@ -1,6 +1,21 @@
 {
     "logs": [
         {
+            "outputFile": "C:\\Users\\andreas\\Codes\\git\\denk\\grade_it\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-h330dp-v13\\values-h330dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\andreas\\.gradle\\caches\\transforms-1\\files-1.1\\materialdatetimepicker-3.4.0.aar\\2e6f009dd0ca85230c9b4ddb9e78f4f6\\res\\values-h330dp-v13\\values-h330dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,125",
+                        "endColumns": "69,56",
+                        "endOffsets": "120,177"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "C:\\Users\\andreas\\Codes\\Android\\grade_it\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-h330dp-v13\\values-h330dp-v13.xml",
             "map": [
                 {

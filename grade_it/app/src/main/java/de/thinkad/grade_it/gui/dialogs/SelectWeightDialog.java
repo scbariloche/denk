@@ -2,6 +2,7 @@ package de.thinkad.grade_it.gui.dialogs;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -38,6 +39,7 @@ public class SelectWeightDialog extends FragmentActivity implements WeightFragme
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         db = new DBHelper(this);
         weightList = db.getAllTopWeights();
         setContentView(R.layout.dialog_select_weight);

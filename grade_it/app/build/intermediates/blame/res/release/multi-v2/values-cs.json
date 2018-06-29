@@ -1,6 +1,96 @@
 {
     "logs": [
         {
+            "outputFile": "C:\\Users\\andreas\\Codes\\git\\denk\\grade_it\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-cs\\values-cs.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\andreas\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.2.aar\\5919ff55f786dc966a72cc24d1988373\\res\\values-cs\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "285",
+                        "endColumns": "201",
+                        "endOffsets": "486"
+                    },
+                    "to": {
+                        "startLines": "19",
+                        "startColumns": "4",
+                        "startOffsets": "1873",
+                        "endColumns": "201",
+                        "endOffsets": "2070"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\andreas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\ebf087bddd64512b7125eca32fbb2f1a\\res\\values-cs\\values-cs.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,212,314,423,509,614,731,812,893,977,1081,1190,1289,1395,1505,1612,1775,1873",
+                        "endColumns": "106,101,108,85,104,116,80,80,83,103,108,98,105,109,106,162,97,81",
+                        "endOffsets": "207,309,418,504,609,726,807,888,972,1076,1185,1284,1390,1500,1607,1770,1868,1950"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,40",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,212,314,423,509,614,731,812,893,977,1081,1190,1289,1395,1505,1612,1775,3929",
+                        "endColumns": "106,101,108,85,104,116,80,80,83,103,108,98,105,109,106,162,97,81",
+                        "endOffsets": "207,309,418,504,609,726,807,888,972,1076,1185,1284,1390,1500,1607,1770,1868,4006"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\andreas\\.gradle\\caches\\transforms-1\\files-1.1\\materialdatetimepicker-3.4.0.aar\\2e6f009dd0ca85230c9b4ddb9e78f4f6\\res\\values-cs\\values-cs.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,166,231,344,456,537,647,773,885,979,1069,1161,1248",
+                        "endColumns": "60,64,112,111,80,109,125,111,93,89,91,86,98",
+                        "endOffsets": "161,226,339,451,532,642,768,880,974,1064,1156,1243,1342"
+                    },
+                    "to": {
+                        "startLines": "20,21,22,23,24,25,26,27,28,29,30,31,32",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2075,2136,2201,2314,2426,2507,2617,2743,2855,2949,3039,3131,3218",
+                        "endColumns": "60,64,112,111,80,109,125,111,93,89,91,86,98",
+                        "endOffsets": "2131,2196,2309,2421,2502,2612,2738,2850,2944,3034,3126,3213,3312"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\andreas\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-11.6.2.aar\\6956b1021def6bf2a747e57cc4ecf218\\res\\values-cs\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "237,309,421,487,554,640,747",
+                        "endColumns": "71,111,65,66,85,106,73",
+                        "endOffsets": "308,420,486,553,639,746,820"
+                    },
+                    "to": {
+                        "startLines": "33,34,35,36,37,38,39",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "3317,3393,3509,3579,3650,3740,3851",
+                        "endColumns": "75,115,69,70,89,110,77",
+                        "endOffsets": "3388,3504,3574,3645,3735,3846,3924"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\andreas\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\0c3e3fa1a53857ebac04f77d25b06b10\\res\\values-cs\\values-cs.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "41",
+                        "startColumns": "4",
+                        "startOffsets": "4011",
+                        "endColumns": "100",
+                        "endOffsets": "4107"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "C:\\Users\\andreas\\Codes\\Android\\grade_it\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-cs\\values-cs.xml",
             "map": [
                 {

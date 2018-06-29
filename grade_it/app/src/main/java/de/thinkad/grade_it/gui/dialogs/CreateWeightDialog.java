@@ -2,6 +2,7 @@ package de.thinkad.grade_it.gui.dialogs;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -58,6 +59,7 @@ public class CreateWeightDialog extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         db = new DBHelper(this);
         setContentView(R.layout.dialog_create_weight);
         newGroupContainer = findViewById(R.id.new_weight_group_element);

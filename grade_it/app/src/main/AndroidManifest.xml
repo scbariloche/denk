@@ -40,12 +40,10 @@
         <activity
             android:name=".gui.dialogs.SelectWeightDialog"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"></activity>
         <activity
             android:name=".gui.dialogs.CreateWeightDialog"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"></activity>
         <activity
             android:name=".gui.dialogs.ImprintDialog"
