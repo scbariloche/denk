@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F97C526120EDF4840003E160 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97C526020EDF4840003E160 /* Type.swift */; };
+		F97C526320EDF4930003E160 /* Accept.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97C526220EDF4930003E160 /* Accept.swift */; };
+		F97C526520EDF4A50003E160 /* Schicht.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97C526420EDF4A50003E160 /* Schicht.swift */; };
+		F97C526720EDF4B00003E160 /* Schicht2Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97C526620EDF4B00003E160 /* Schicht2Change.swift */; };
 		F9D8BB0520ECF56000BE0C10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8BB0420ECF56000BE0C10 /* AppDelegate.swift */; };
 		F9D8BB0720ECF56000BE0C10 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8BB0620ECF56000BE0C10 /* FirstViewController.swift */; };
 		F9D8BB0920ECF56000BE0C10 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8BB0820ECF56000BE0C10 /* SecondViewController.swift */; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F97C526020EDF4840003E160 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		F97C526220EDF4930003E160 /* Accept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accept.swift; sourceTree = "<group>"; };
+		F97C526420EDF4A50003E160 /* Schicht.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schicht.swift; sourceTree = "<group>"; };
+		F97C526620EDF4B00003E160 /* Schicht2Change.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schicht2Change.swift; sourceTree = "<group>"; };
 		F9D8BB0120ECF56000BE0C10 /* schichtln.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schichtln.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D8BB0420ECF56000BE0C10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D8BB0620ECF56000BE0C10 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +146,10 @@
 			children = (
 				F9D8BB3520ED077700BE0C10 /* User.swift */,
 				F9D8BB3720ED087C00BE0C10 /* Group.swift */,
+				F97C526020EDF4840003E160 /* Type.swift */,
+				F97C526220EDF4930003E160 /* Accept.swift */,
+				F97C526420EDF4A50003E160 /* Schicht.swift */,
+				F97C526620EDF4B00003E160 /* Schicht2Change.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -273,11 +285,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F97C526320EDF4930003E160 /* Accept.swift in Sources */,
 				F9D8BB3620ED077700BE0C10 /* User.swift in Sources */,
 				F9D8BB0920ECF56000BE0C10 /* SecondViewController.swift in Sources */,
 				F9D8BB0520ECF56000BE0C10 /* AppDelegate.swift in Sources */,
 				F9D8BB3820ED087C00BE0C10 /* Group.swift in Sources */,
 				F9D8BB0720ECF56000BE0C10 /* FirstViewController.swift in Sources */,
+				F97C526520EDF4A50003E160 /* Schicht.swift in Sources */,
+				F97C526720EDF4B00003E160 /* Schicht2Change.swift in Sources */,
+				F97C526120EDF4840003E160 /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
