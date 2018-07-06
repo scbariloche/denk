@@ -1,0 +1,6 @@
+framework module Pods_schichtln {
+  umbrella header "Pods-schichtln-umbrella.h"
+
+  export *
+  module * { export * }
+}

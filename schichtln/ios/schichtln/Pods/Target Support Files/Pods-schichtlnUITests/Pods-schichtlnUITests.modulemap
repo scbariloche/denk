@@ -1,0 +1,6 @@
+framework module Pods_schichtlnUITests {
+  umbrella header "Pods-schichtlnUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

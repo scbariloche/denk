@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
  struct Schicht2Change:Codable{
     public var id:Int = 0
     public var day :Date = Date(timeIntervalSinceNow: 0)
