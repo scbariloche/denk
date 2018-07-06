@@ -19,10 +19,10 @@ import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.longToast
 
-val RESULTCODE_LOGIN = 10
+
 
 class MainActivity : AppCompatActivity() {
-
+    val RESULTCODE_LOGIN = 10
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
