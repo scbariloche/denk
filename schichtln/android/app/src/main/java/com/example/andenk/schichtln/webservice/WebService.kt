@@ -1,11 +1,7 @@
 package com.example.andenk.schichtln.webservice
 
 import android.content.Context
-import com.android.volley.DefaultRetryPolicy
-import com.android.volley.RequestQueue
-import com.android.volley.toolbox.JsonArrayRequest
-import com.android.volley.toolbox.Volley
-import com.example.andenk.schichtln.helper.format
+import com.example.andenk.schichtln.format
 import com.example.andenk.schichtln.helper.gson
 import com.example.andenk.schichtln.is_same_as
 import com.example.andenk.schichtln.line_number
