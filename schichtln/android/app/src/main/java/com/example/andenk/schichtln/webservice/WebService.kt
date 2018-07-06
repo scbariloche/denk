@@ -26,20 +26,11 @@ import java.util.*
  */
 
 
-val jsonData = "?data="
 
 
 // emulator loopback to host
 //val ip = "10.0.2.2:8000"
 
-// Batman @ casetta
-//    val ip = "192.168.178.24:8080"
-
-// Batman @ casetta
-//    val ip = "192.168.178.44:8000"
-
-// PC @ dagda
-//    val ip = "192.168.178.138:8080"
 
 // PC @ other
 //    val ip = "10.148.58.212:8080"

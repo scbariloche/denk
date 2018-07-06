@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "schichtln/Webservice/Webservice.swift"
+            timestampString = "552569750.839635"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "get_user_by_name(name:on_success:on_error:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "schichtln/Webservice/Webservice.swift"
+            timestampString = "552569750.83978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "get_user_by_id(id:on_success:on_error:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "schichtln.get_user_by_id(id: Swift.Int, on_success: (Swift.Optional&lt;schichtln.User&gt;) -&gt; (), on_error: (schichtln.WebserviceError) -&gt; ()) -&gt; ()"
+                  moduleName = "schichtln"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schichtln/schichtln/Webservice/Webservice.swift"
+                  timestampString = "552569750.9509439"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "33">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in schichtln.get_user_by_id(id: Swift.Int, on_success: (Swift.Optional&lt;schichtln.User&gt;) -&gt; (), on_error: (schichtln.WebserviceError) -&gt; ()) -&gt; ()"
+                  moduleName = "schichtln"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schichtln/schichtln/Webservice/Webservice.swift"
+                  timestampString = "552569750.9540679"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "61">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "schichtln/Webservice/Webservice.swift"
+            timestampString = "552569750.8398581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "get_user_by_id(id:on_success:on_error:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "schichtln/Webservice/Webservice.swift"
+            timestampString = "552569750.839923"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "get_user_by_id(id:on_success:on_error:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in schichtln.get_user_by_id(id: Swift.Int, on_success: (Swift.Optional&lt;schichtln.User&gt;) -&gt; (), on_error: (schichtln.WebserviceError) -&gt; ()) -&gt; ()"
+                  moduleName = "schichtln"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schichtln/schichtln/Webservice/Webservice.swift"
+                  timestampString = "552569750.967225"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "2144">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in schichtln.get_user_by_id(id: Swift.Int, on_success: (Swift.Optional&lt;schichtln.User&gt;) -&gt; (), on_error: (schichtln.WebserviceError) -&gt; ()) -&gt; ()"
+                  moduleName = "schichtln"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schichtln/schichtln/Webservice/Webservice.swift"
+                  timestampString = "552569750.9697551"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "2213">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

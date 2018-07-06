@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D65896B1C51B0663F18B38A47DE5B0EF"
-               BuildableName = "Pods_schichtln.framework"
-               BlueprintName = "Pods-schichtln"
+               BlueprintIdentifier = "F4EE6B5AA6E31B87B521DFEE862ED70B"
+               BuildableName = "ViewPager_Swift.framework"
+               BlueprintName = "ViewPager-Swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D65896B1C51B0663F18B38A47DE5B0EF"
-            BuildableName = "Pods_schichtln.framework"
-            BlueprintName = "Pods-schichtln"
+            BlueprintIdentifier = "F4EE6B5AA6E31B87B521DFEE862ED70B"
+            BuildableName = "ViewPager_Swift.framework"
+            BlueprintName = "ViewPager-Swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

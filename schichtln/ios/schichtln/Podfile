@@ -8,6 +8,7 @@ target 'schichtln' do
   # Pods for schichtln
 
  pod 'Alamofire', '~> 4.7'
+ pod 'ViewPager-Swift'
 
   target 'schichtlnTests' do
     inherit! :search_paths

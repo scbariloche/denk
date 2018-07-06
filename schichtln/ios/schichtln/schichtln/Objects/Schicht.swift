@@ -28,3 +28,17 @@ public enum State: String , Codable{
     case offered = "offered"
     case for_trade = "for_trade"
 }
+
+extension Schicht{
+    func is_same_as(schicht:Schicht) -> Bool{
+        return (self.id == schicht.id
+        && self.accept.id == schicht.accept.id
+        && self.day == schicht.day
+        && self.offered_to?.id == schicht.offered_to?.id
+        && self.position.id == schicht.position.id
+        && self.state == schicht.state
+        && self.trade_for_id == schicht.trade_for_id
+        && self.type.id == self.type.id
+        && self.user.id == self.user.id)
+    }
+}
