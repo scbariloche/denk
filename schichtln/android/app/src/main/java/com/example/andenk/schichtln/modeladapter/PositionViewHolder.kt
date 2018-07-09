@@ -3,9 +3,7 @@ package com.example.andenk.schichtln.modeladapter
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import android.view.View.GONE
-import android.view.View.INVISIBLE
-import com.example.andenk.schichtln.helper.format
+import com.example.andenk.schichtln.format
 import com.example.andenk.schichtln.pojos.Schicht
 import com.example.andenk.schichtln.teaser
 import kotlinx.android.synthetic.main.display_user_list.view.*

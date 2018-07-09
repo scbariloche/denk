@@ -1,14 +1,14 @@
 //
 //  FirstViewController.swift
-//  schichtln
+//  schicht_storyboard
 //
-//  Created by Andreas Denk on 04.07.18.
+//  Created by Andreas Denk on 09.07.18.
 //  Copyright © 2018 Andreas Denk. All rights reserved.
 //
 
 import UIKit
 
-class FirstViewController: UITableViewController {
+class HomeiewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,6 @@ class FirstViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
+
 }
 

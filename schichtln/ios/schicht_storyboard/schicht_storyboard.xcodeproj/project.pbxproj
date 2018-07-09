@@ -1,0 +1,803 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE27B5311C90692112EB871F /* Pods_schicht_storyboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1DC200588F7766F4BF3981 /* Pods_schicht_storyboardUITests.framework */; };
+		E1878C2D08F3FFEC3245B96C /* Pods_schicht_storyboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B25152C5BEEFBFEE475EB3 /* Pods_schicht_storyboardTests.framework */; };
+		F59615D0594543ADE75AE1B1 /* Pods_schicht_storyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF22A99CAE35EA3E813A4D24 /* Pods_schicht_storyboard.framework */; };
+		F91DD34F20F33D3C00864459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD34E20F33D3C00864459 /* AppDelegate.swift */; };
+		F91DD35120F33D3C00864459 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD35020F33D3C00864459 /* HomeViewController.swift */; };
+		F91DD35320F33D3C00864459 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD35220F33D3C00864459 /* PlanViewController.swift */; };
+		F91DD35620F33D3C00864459 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DD35420F33D3C00864459 /* Main.storyboard */; };
+		F91DD35820F33D3D00864459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91DD35720F33D3D00864459 /* Assets.xcassets */; };
+		F91DD35B20F33D3D00864459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DD35920F33D3D00864459 /* LaunchScreen.storyboard */; };
+		F91DD36620F33D3D00864459 /* schicht_storyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD36520F33D3D00864459 /* schicht_storyboardTests.swift */; };
+		F91DD37120F33D3D00864459 /* schicht_storyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD37020F33D3D00864459 /* schicht_storyboardUITests.swift */; };
+		F91DD38520F33E3800864459 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DD38320F33E3800864459 /* Home.storyboard */; };
+		F91DD38720F33F2800864459 /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DD38620F33F2800864459 /* Plan.storyboard */; };
+		F91DD38A20F33FF000864459 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DD38820F33FF000864459 /* Web.storyboard */; };
+		F91DD38D20F344EF00864459 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91DD38C20F344EF00864459 /* WebKit.framework */; };
+		F91DD3BE20F34E8700864459 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3BD20F34E8600864459 /* WebViewController.swift */; };
+		F91DD3C820F3560800864459 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3C220F3560800864459 /* Group.swift */; };
+		F91DD3C920F3560800864459 /* Schicht.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3C320F3560800864459 /* Schicht.swift */; };
+		F91DD3CA20F3560800864459 /* Accept.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3C420F3560800864459 /* Accept.swift */; };
+		F91DD3CB20F3560800864459 /* Schicht2Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3C520F3560800864459 /* Schicht2Change.swift */; };
+		F91DD3CC20F3560800864459 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3C620F3560800864459 /* User.swift */; };
+		F91DD3CD20F3560800864459 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3C720F3560800864459 /* Type.swift */; };
+		F91DD3CF20F3563700864459 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3CE20F3563600864459 /* Webservice.swift */; };
+		F91DD3D120F3566500864459 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3D020F3566500864459 /* Extensions.swift */; };
+		F91DD3D320F35BF000864459 /* PlanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3D220F35BF000864459 /* PlanDetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F91DD36220F33D3D00864459 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F91DD34320F33D3C00864459 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F91DD34A20F33D3C00864459;
+			remoteInfo = schicht_storyboard;
+		};
+		F91DD36D20F33D3D00864459 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F91DD34320F33D3C00864459 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F91DD34A20F33D3C00864459;
+			remoteInfo = schicht_storyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3AE5C6001A7058514FFF981E /* Pods-schicht_storyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schicht_storyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-schicht_storyboard/Pods-schicht_storyboard.debug.xcconfig"; sourceTree = "<group>"; };
+		3C1DC200588F7766F4BF3981 /* Pods_schicht_storyboardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schicht_storyboardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F26FE0D9E5D9E7B01CBB641 /* Pods-schicht_storyboardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schicht_storyboardTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-schicht_storyboardTests/Pods-schicht_storyboardTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7BC2B5B12F7DC02C4D223E11 /* Pods-schicht_storyboardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schicht_storyboardUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-schicht_storyboardUITests/Pods-schicht_storyboardUITests.release.xcconfig"; sourceTree = "<group>"; };
+		94830485C5D202E53B0AB528 /* Pods-schicht_storyboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schicht_storyboardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-schicht_storyboardTests/Pods-schicht_storyboardTests.release.xcconfig"; sourceTree = "<group>"; };
+		9CFE69B2652268DC437C5BB4 /* Pods-schicht_storyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schicht_storyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-schicht_storyboard/Pods-schicht_storyboard.release.xcconfig"; sourceTree = "<group>"; };
+		BF22A99CAE35EA3E813A4D24 /* Pods_schicht_storyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schicht_storyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3B25152C5BEEFBFEE475EB3 /* Pods_schicht_storyboardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schicht_storyboardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBBD8DF728B6C6CDA547E714 /* Pods-schicht_storyboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schicht_storyboardUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-schicht_storyboardUITests/Pods-schicht_storyboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F91DD34B20F33D3C00864459 /* schicht_storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schicht_storyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F91DD34E20F33D3C00864459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F91DD35020F33D3C00864459 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F91DD35220F33D3C00864459 /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
+		F91DD35520F33D3C00864459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F91DD35720F33D3D00864459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F91DD35A20F33D3D00864459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F91DD35C20F33D3D00864459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F91DD36120F33D3D00864459 /* schicht_storyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = schicht_storyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F91DD36520F33D3D00864459 /* schicht_storyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schicht_storyboardTests.swift; sourceTree = "<group>"; };
+		F91DD36720F33D3D00864459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F91DD36C20F33D3D00864459 /* schicht_storyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = schicht_storyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F91DD37020F33D3D00864459 /* schicht_storyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schicht_storyboardUITests.swift; sourceTree = "<group>"; };
+		F91DD37220F33D3D00864459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F91DD38420F33E3800864459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = schicht_storyboard/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		F91DD38620F33F2800864459 /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
+		F91DD38920F33FF000864459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = schicht_storyboard/Base.lproj/Web.storyboard; sourceTree = "<group>"; };
+		F91DD38C20F344EF00864459 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		F91DD3BD20F34E8600864459 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = /Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schicht_storyboard/schicht_storyboard/WebViewController.swift; sourceTree = "<absolute>"; };
+		F91DD3C220F3560800864459 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = schicht_storyboard/Objects/Group.swift; sourceTree = SOURCE_ROOT; };
+		F91DD3C320F3560800864459 /* Schicht.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schicht.swift; path = schicht_storyboard/Objects/Schicht.swift; sourceTree = SOURCE_ROOT; };
+		F91DD3C420F3560800864459 /* Accept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Accept.swift; path = schicht_storyboard/Objects/Accept.swift; sourceTree = SOURCE_ROOT; };
+		F91DD3C520F3560800864459 /* Schicht2Change.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schicht2Change.swift; path = schicht_storyboard/Objects/Schicht2Change.swift; sourceTree = SOURCE_ROOT; };
+		F91DD3C620F3560800864459 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = schicht_storyboard/Objects/User.swift; sourceTree = SOURCE_ROOT; };
+		F91DD3C720F3560800864459 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Type.swift; path = schicht_storyboard/Objects/Type.swift; sourceTree = SOURCE_ROOT; };
+		F91DD3CE20F3563600864459 /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		F91DD3D020F3566500864459 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F91DD3D220F35BF000864459 /* PlanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F91DD34820F33D3C00864459 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91DD38D20F344EF00864459 /* WebKit.framework in Frameworks */,
+				F59615D0594543ADE75AE1B1 /* Pods_schicht_storyboard.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F91DD35E20F33D3D00864459 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1878C2D08F3FFEC3245B96C /* Pods_schicht_storyboardTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F91DD36920F33D3D00864459 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE27B5311C90692112EB871F /* Pods_schicht_storyboardUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		124245E97397912E8E2B1384 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5C6001A7058514FFF981E /* Pods-schicht_storyboard.debug.xcconfig */,
+				9CFE69B2652268DC437C5BB4 /* Pods-schicht_storyboard.release.xcconfig */,
+				5F26FE0D9E5D9E7B01CBB641 /* Pods-schicht_storyboardTests.debug.xcconfig */,
+				94830485C5D202E53B0AB528 /* Pods-schicht_storyboardTests.release.xcconfig */,
+				EBBD8DF728B6C6CDA547E714 /* Pods-schicht_storyboardUITests.debug.xcconfig */,
+				7BC2B5B12F7DC02C4D223E11 /* Pods-schicht_storyboardUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F91DD34220F33D3C00864459 = {
+			isa = PBXGroup;
+			children = (
+				F91DD34D20F33D3C00864459 /* schicht_storyboard */,
+				F91DD36420F33D3D00864459 /* schicht_storyboardTests */,
+				F91DD36F20F33D3D00864459 /* schicht_storyboardUITests */,
+				F91DD34C20F33D3C00864459 /* Products */,
+				F91DD38B20F344EE00864459 /* Frameworks */,
+				124245E97397912E8E2B1384 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		F91DD34C20F33D3C00864459 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD34B20F33D3C00864459 /* schicht_storyboard.app */,
+				F91DD36120F33D3D00864459 /* schicht_storyboardTests.xctest */,
+				F91DD36C20F33D3D00864459 /* schicht_storyboardUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F91DD34D20F33D3C00864459 /* schicht_storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD3D020F3566500864459 /* Extensions.swift */,
+				F91DD3CE20F3563600864459 /* Webservice.swift */,
+				F91DD3C120F355B100864459 /* Objects */,
+				F91DD3BC20F34AEB00864459 /* storyboards */,
+				F91DD3BD20F34E8600864459 /* WebViewController.swift */,
+				F91DD34E20F33D3C00864459 /* AppDelegate.swift */,
+				F91DD35020F33D3C00864459 /* HomeViewController.swift */,
+				F91DD35220F33D3C00864459 /* PlanViewController.swift */,
+				F91DD3D220F35BF000864459 /* PlanDetailViewController.swift */,
+				F91DD35720F33D3D00864459 /* Assets.xcassets */,
+				F91DD35C20F33D3D00864459 /* Info.plist */,
+			);
+			path = schicht_storyboard;
+			sourceTree = "<group>";
+		};
+		F91DD36420F33D3D00864459 /* schicht_storyboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD36520F33D3D00864459 /* schicht_storyboardTests.swift */,
+				F91DD36720F33D3D00864459 /* Info.plist */,
+			);
+			path = schicht_storyboardTests;
+			sourceTree = "<group>";
+		};
+		F91DD36F20F33D3D00864459 /* schicht_storyboardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD37020F33D3D00864459 /* schicht_storyboardUITests.swift */,
+				F91DD37220F33D3D00864459 /* Info.plist */,
+			);
+			path = schicht_storyboardUITests;
+			sourceTree = "<group>";
+		};
+		F91DD38B20F344EE00864459 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD38C20F344EF00864459 /* WebKit.framework */,
+				BF22A99CAE35EA3E813A4D24 /* Pods_schicht_storyboard.framework */,
+				E3B25152C5BEEFBFEE475EB3 /* Pods_schicht_storyboardTests.framework */,
+				3C1DC200588F7766F4BF3981 /* Pods_schicht_storyboardUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F91DD3BC20F34AEB00864459 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD35920F33D3D00864459 /* LaunchScreen.storyboard */,
+				F91DD38320F33E3800864459 /* Home.storyboard */,
+				F91DD38620F33F2800864459 /* Plan.storyboard */,
+				F91DD38820F33FF000864459 /* Web.storyboard */,
+				F91DD35420F33D3C00864459 /* Main.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		F91DD3C120F355B100864459 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD3C420F3560800864459 /* Accept.swift */,
+				F91DD3C220F3560800864459 /* Group.swift */,
+				F91DD3C320F3560800864459 /* Schicht.swift */,
+				F91DD3C520F3560800864459 /* Schicht2Change.swift */,
+				F91DD3C720F3560800864459 /* Type.swift */,
+				F91DD3C620F3560800864459 /* User.swift */,
+			);
+			name = Objects;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F91DD34A20F33D3C00864459 /* schicht_storyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F91DD37520F33D3D00864459 /* Build configuration list for PBXNativeTarget "schicht_storyboard" */;
+			buildPhases = (
+				C05CAC8860D821665BFE8AAE /* [CP] Check Pods Manifest.lock */,
+				F91DD34720F33D3C00864459 /* Sources */,
+				F91DD34820F33D3C00864459 /* Frameworks */,
+				F91DD34920F33D3C00864459 /* Resources */,
+				41CE9D7E88DA9A710916BB2C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = schicht_storyboard;
+			productName = schicht_storyboard;
+			productReference = F91DD34B20F33D3C00864459 /* schicht_storyboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F91DD36020F33D3D00864459 /* schicht_storyboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F91DD37820F33D3D00864459 /* Build configuration list for PBXNativeTarget "schicht_storyboardTests" */;
+			buildPhases = (
+				541C9DD6D6F9C4E7DC4D01EA /* [CP] Check Pods Manifest.lock */,
+				F91DD35D20F33D3D00864459 /* Sources */,
+				F91DD35E20F33D3D00864459 /* Frameworks */,
+				F91DD35F20F33D3D00864459 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F91DD36320F33D3D00864459 /* PBXTargetDependency */,
+			);
+			name = schicht_storyboardTests;
+			productName = schicht_storyboardTests;
+			productReference = F91DD36120F33D3D00864459 /* schicht_storyboardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F91DD36B20F33D3D00864459 /* schicht_storyboardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F91DD37B20F33D3D00864459 /* Build configuration list for PBXNativeTarget "schicht_storyboardUITests" */;
+			buildPhases = (
+				0E87C4DF17AC25FEAD2A6020 /* [CP] Check Pods Manifest.lock */,
+				F91DD36820F33D3D00864459 /* Sources */,
+				F91DD36920F33D3D00864459 /* Frameworks */,
+				F91DD36A20F33D3D00864459 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F91DD36E20F33D3D00864459 /* PBXTargetDependency */,
+			);
+			name = schicht_storyboardUITests;
+			productName = schicht_storyboardUITests;
+			productReference = F91DD36C20F33D3D00864459 /* schicht_storyboardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F91DD34320F33D3C00864459 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Andreas Denk";
+				TargetAttributes = {
+					F91DD34A20F33D3C00864459 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					F91DD36020F33D3D00864459 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = F91DD34A20F33D3C00864459;
+					};
+					F91DD36B20F33D3D00864459 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = F91DD34A20F33D3C00864459;
+					};
+				};
+			};
+			buildConfigurationList = F91DD34620F33D3C00864459 /* Build configuration list for PBXProject "schicht_storyboard" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F91DD34220F33D3C00864459;
+			productRefGroup = F91DD34C20F33D3C00864459 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F91DD34A20F33D3C00864459 /* schicht_storyboard */,
+				F91DD36020F33D3D00864459 /* schicht_storyboardTests */,
+				F91DD36B20F33D3D00864459 /* schicht_storyboardUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F91DD34920F33D3C00864459 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91DD35B20F33D3D00864459 /* LaunchScreen.storyboard in Resources */,
+				F91DD38720F33F2800864459 /* Plan.storyboard in Resources */,
+				F91DD38520F33E3800864459 /* Home.storyboard in Resources */,
+				F91DD35820F33D3D00864459 /* Assets.xcassets in Resources */,
+				F91DD35620F33D3C00864459 /* Main.storyboard in Resources */,
+				F91DD38A20F33FF000864459 /* Web.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F91DD35F20F33D3D00864459 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F91DD36A20F33D3D00864459 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E87C4DF17AC25FEAD2A6020 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-schicht_storyboardUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41CE9D7E88DA9A710916BB2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-schicht_storyboard/Pods-schicht_storyboard-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ViewPager-Swift/ViewPager_Swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewPager_Swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-schicht_storyboard/Pods-schicht_storyboard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		541C9DD6D6F9C4E7DC4D01EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-schicht_storyboardTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C05CAC8860D821665BFE8AAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-schicht_storyboard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F91DD34720F33D3C00864459 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91DD3CA20F3560800864459 /* Accept.swift in Sources */,
+				F91DD3BE20F34E8700864459 /* WebViewController.swift in Sources */,
+				F91DD35320F33D3C00864459 /* PlanViewController.swift in Sources */,
+				F91DD3C920F3560800864459 /* Schicht.swift in Sources */,
+				F91DD3CF20F3563700864459 /* Webservice.swift in Sources */,
+				F91DD34F20F33D3C00864459 /* AppDelegate.swift in Sources */,
+				F91DD3CD20F3560800864459 /* Type.swift in Sources */,
+				F91DD3D120F3566500864459 /* Extensions.swift in Sources */,
+				F91DD3CC20F3560800864459 /* User.swift in Sources */,
+				F91DD3CB20F3560800864459 /* Schicht2Change.swift in Sources */,
+				F91DD3C820F3560800864459 /* Group.swift in Sources */,
+				F91DD35120F33D3C00864459 /* HomeViewController.swift in Sources */,
+				F91DD3D320F35BF000864459 /* PlanDetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F91DD35D20F33D3D00864459 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91DD36620F33D3D00864459 /* schicht_storyboardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F91DD36820F33D3D00864459 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91DD37120F33D3D00864459 /* schicht_storyboardUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F91DD36320F33D3D00864459 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F91DD34A20F33D3C00864459 /* schicht_storyboard */;
+			targetProxy = F91DD36220F33D3D00864459 /* PBXContainerItemProxy */;
+		};
+		F91DD36E20F33D3D00864459 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F91DD34A20F33D3C00864459 /* schicht_storyboard */;
+			targetProxy = F91DD36D20F33D3D00864459 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F91DD35420F33D3C00864459 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F91DD35520F33D3C00864459 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F91DD35920F33D3D00864459 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F91DD35A20F33D3D00864459 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F91DD38320F33E3800864459 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F91DD38420F33E3800864459 /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		F91DD38820F33FF000864459 /* Web.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F91DD38920F33FF000864459 /* Base */,
+			);
+			name = Web.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F91DD37320F33D3D00864459 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F91DD37420F33D3D00864459 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F91DD37620F33D3D00864459 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AE5C6001A7058514FFF981E /* Pods-schicht_storyboard.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = schicht_storyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "thinkad.schicht-storyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F91DD37720F33D3D00864459 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CFE69B2652268DC437C5BB4 /* Pods-schicht_storyboard.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = schicht_storyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "thinkad.schicht-storyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F91DD37920F33D3D00864459 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F26FE0D9E5D9E7B01CBB641 /* Pods-schicht_storyboardTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = schicht_storyboardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "thinkad.schicht-storyboardTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/schicht_storyboard.app/schicht_storyboard";
+			};
+			name = Debug;
+		};
+		F91DD37A20F33D3D00864459 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94830485C5D202E53B0AB528 /* Pods-schicht_storyboardTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = schicht_storyboardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "thinkad.schicht-storyboardTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/schicht_storyboard.app/schicht_storyboard";
+			};
+			name = Release;
+		};
+		F91DD37C20F33D3D00864459 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBBD8DF728B6C6CDA547E714 /* Pods-schicht_storyboardUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = schicht_storyboardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "thinkad.schicht-storyboardUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = schicht_storyboard;
+			};
+			name = Debug;
+		};
+		F91DD37D20F33D3D00864459 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BC2B5B12F7DC02C4D223E11 /* Pods-schicht_storyboardUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = schicht_storyboardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "thinkad.schicht-storyboardUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = schicht_storyboard;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F91DD34620F33D3C00864459 /* Build configuration list for PBXProject "schicht_storyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F91DD37320F33D3D00864459 /* Debug */,
+				F91DD37420F33D3D00864459 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F91DD37520F33D3D00864459 /* Build configuration list for PBXNativeTarget "schicht_storyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F91DD37620F33D3D00864459 /* Debug */,
+				F91DD37720F33D3D00864459 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F91DD37820F33D3D00864459 /* Build configuration list for PBXNativeTarget "schicht_storyboardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F91DD37920F33D3D00864459 /* Debug */,
+				F91DD37A20F33D3D00864459 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F91DD37B20F33D3D00864459 /* Build configuration list for PBXNativeTarget "schicht_storyboardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F91DD37C20F33D3D00864459 /* Debug */,
+				F91DD37D20F33D3D00864459 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F91DD34320F33D3C00864459 /* Project object */;
+}

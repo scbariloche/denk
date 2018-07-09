@@ -1,0 +1,6 @@
+framework module Pods_schicht_storyboard {
+  umbrella header "Pods-schicht_storyboard-umbrella.h"
+
+  export *
+  module * { export * }
+}

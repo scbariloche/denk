@@ -15,7 +15,6 @@
 		F97C526520EDF4A50003E160 /* Schicht.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97C526420EDF4A50003E160 /* Schicht.swift */; };
 		F97C526720EDF4B00003E160 /* Schicht2Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97C526620EDF4B00003E160 /* Schicht2Change.swift */; };
 		F9D8BB0520ECF56000BE0C10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8BB0420ECF56000BE0C10 /* AppDelegate.swift */; };
-		F9D8BB0720ECF56000BE0C10 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8BB0620ECF56000BE0C10 /* FirstViewController.swift */; };
 		F9D8BB0920ECF56000BE0C10 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8BB0820ECF56000BE0C10 /* SecondViewController.swift */; };
 		F9D8BB0E20ECF56200BE0C10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D8BB0D20ECF56200BE0C10 /* Assets.xcassets */; };
 		F9D8BB1C20ECF56300BE0C10 /* schichtlnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8BB1B20ECF56300BE0C10 /* schichtlnTests.swift */; };
@@ -60,7 +59,6 @@
 		F97C526620EDF4B00003E160 /* Schicht2Change.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schicht2Change.swift; sourceTree = "<group>"; };
 		F9D8BB0120ECF56000BE0C10 /* schichtln.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schichtln.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D8BB0420ECF56000BE0C10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9D8BB0620ECF56000BE0C10 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		F9D8BB0820ECF56000BE0C10 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F9D8BB0D20ECF56200BE0C10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9D8BB1220ECF56200BE0C10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 				F9E7851720EF533C00C6E4ED /* UI */,
 				F9D8BB3420ED075E00BE0C10 /* Objects */,
 				F9D8BB0420ECF56000BE0C10 /* AppDelegate.swift */,
-				F9D8BB0620ECF56000BE0C10 /* FirstViewController.swift */,
 				F9D8BB0820ECF56000BE0C10 /* SecondViewController.swift */,
 				F9D8BB0D20ECF56200BE0C10 /* Assets.xcassets */,
 				F9D8BB1220ECF56200BE0C10 /* Info.plist */,
@@ -431,7 +428,6 @@
 				F9D8BB3820ED087C00BE0C10 /* Group.swift in Sources */,
 				F9E7851920EF537300C6E4ED /* HomeViewController.swift in Sources */,
 				F9E7851E20EF7ECE00C6E4ED /* Extensions.swift in Sources */,
-				F9D8BB0720ECF56000BE0C10 /* FirstViewController.swift in Sources */,
 				F97C526520EDF4A50003E160 /* Schicht.swift in Sources */,
 				F97C526720EDF4B00003E160 /* Schicht2Change.swift in Sources */,
 				F97C526120EDF4840003E160 /* Type.swift in Sources */,

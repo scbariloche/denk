@@ -1,0 +1,6 @@
+framework module Pods_schicht_storyboardUITests {
+  umbrella header "Pods-schicht_storyboardUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schicht_storyboard/schicht_storyboard/WebViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schicht_storyboard/schicht_storyboard/Extensions.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schicht_storyboard/schicht_storyboard/Objects">
+   </FileRef>
+   <FileRef
+      location = "self:schicht_storyboard.xcodeproj">
+   </FileRef>
+</Workspace>

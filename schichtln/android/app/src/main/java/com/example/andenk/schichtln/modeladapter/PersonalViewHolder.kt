@@ -5,7 +5,7 @@ import android.content.DialogInterface
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.example.andenk.schichtln.helper.createAlert
-import com.example.andenk.schichtln.helper.format
+import com.example.andenk.schichtln.format
 import com.example.andenk.schichtln.notification.sendMessage
 import com.example.andenk.schichtln.pojos.Schicht
 import com.example.andenk.schichtln.pojos.Schicht2Change
