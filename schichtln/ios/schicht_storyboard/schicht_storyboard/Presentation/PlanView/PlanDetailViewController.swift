@@ -9,7 +9,7 @@
 import UIKit
 
 
-class CustomCellView:UITableViewCell{
+class PlanDetailCell:UITableViewCell{
     @IBAction func action(_ sender: Any) {
         print("aaaaction")
     }
@@ -34,8 +34,7 @@ class PlanDetailViewController: UITableViewController {
             error in
             
         })
-        
-//   customCell")
+
 
          // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -63,7 +62,7 @@ class PlanDetailViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCellView
+        let cell = tableView.dequeueReusableCell(withIdentifier: "planDetailCell", for: indexPath) as! PlanDetailCell
         cell.lbl.text = schichts[indexPath.row].type.description
         
 

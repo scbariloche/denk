@@ -32,6 +32,9 @@
 		F91DD3CF20F3563700864459 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3CE20F3563600864459 /* Webservice.swift */; };
 		F91DD3D120F3566500864459 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3D020F3566500864459 /* Extensions.swift */; };
 		F91DD3D320F35BF000864459 /* PlanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3D220F35BF000864459 /* PlanDetailViewController.swift */; };
+		F9ECE71520F76B080063949F /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECE71420F76B080063949F /* PersonalViewController.swift */; };
+		F9ECE71720F76C140063949F /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECE71620F76C140063949F /* TradeViewController.swift */; };
+		F9ECE71B20F773FD0063949F /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECE71A20F773FD0063949F /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,15 +83,19 @@
 		F91DD38920F33FF000864459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = schicht_storyboard/Base.lproj/Web.storyboard; sourceTree = "<group>"; };
 		F91DD38C20F344EF00864459 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		F91DD3BD20F34E8600864459 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = /Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schicht_storyboard/schicht_storyboard/WebViewController.swift; sourceTree = "<absolute>"; };
-		F91DD3C220F3560800864459 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = schicht_storyboard/Objects/Group.swift; sourceTree = SOURCE_ROOT; };
-		F91DD3C320F3560800864459 /* Schicht.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schicht.swift; path = schicht_storyboard/Objects/Schicht.swift; sourceTree = SOURCE_ROOT; };
-		F91DD3C420F3560800864459 /* Accept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Accept.swift; path = schicht_storyboard/Objects/Accept.swift; sourceTree = SOURCE_ROOT; };
-		F91DD3C520F3560800864459 /* Schicht2Change.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schicht2Change.swift; path = schicht_storyboard/Objects/Schicht2Change.swift; sourceTree = SOURCE_ROOT; };
-		F91DD3C620F3560800864459 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = schicht_storyboard/Objects/User.swift; sourceTree = SOURCE_ROOT; };
-		F91DD3C720F3560800864459 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Type.swift; path = schicht_storyboard/Objects/Type.swift; sourceTree = SOURCE_ROOT; };
+		F91DD3C220F3560800864459 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = "schicht_storyboard/New Group/Model/Group.swift"; sourceTree = SOURCE_ROOT; };
+		F91DD3C320F3560800864459 /* Schicht.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schicht.swift; path = "schicht_storyboard/New Group/Model/Schicht.swift"; sourceTree = SOURCE_ROOT; };
+		F91DD3C420F3560800864459 /* Accept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Accept.swift; path = "schicht_storyboard/New Group/Model/Accept.swift"; sourceTree = SOURCE_ROOT; };
+		F91DD3C520F3560800864459 /* Schicht2Change.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schicht2Change.swift; path = "schicht_storyboard/New Group/Model/Schicht2Change.swift"; sourceTree = SOURCE_ROOT; };
+		F91DD3C620F3560800864459 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = "schicht_storyboard/New Group/Model/User.swift"; sourceTree = SOURCE_ROOT; };
+		F91DD3C720F3560800864459 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Type.swift; path = "schicht_storyboard/New Group/Model/Type.swift"; sourceTree = SOURCE_ROOT; };
 		F91DD3CE20F3563600864459 /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		F91DD3D020F3566500864459 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F91DD3D220F35BF000864459 /* PlanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewController.swift; sourceTree = "<group>"; };
+		F9ECE71420F76B080063949F /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		F9ECE71620F76C140063949F /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
+		F9ECE71A20F773FD0063949F /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		F9ECE71C20F77DE00063949F /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +143,7 @@
 		F91DD34220F33D3C00864459 = {
 			isa = PBXGroup;
 			children = (
+				F9ECE71C20F77DE00063949F /* Header.h */,
 				F91DD34D20F33D3C00864459 /* schicht_storyboard */,
 				F91DD36420F33D3D00864459 /* schicht_storyboardTests */,
 				F91DD36F20F33D3D00864459 /* schicht_storyboardUITests */,
@@ -158,15 +166,11 @@
 		F91DD34D20F33D3C00864459 /* schicht_storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				F91DD3D020F3566500864459 /* Extensions.swift */,
-				F91DD3CE20F3563600864459 /* Webservice.swift */,
-				F91DD3C120F355B100864459 /* Objects */,
-				F91DD3BC20F34AEB00864459 /* storyboards */,
-				F91DD3BD20F34E8600864459 /* WebViewController.swift */,
 				F91DD34E20F33D3C00864459 /* AppDelegate.swift */,
-				F91DD35020F33D3C00864459 /* HomeViewController.swift */,
-				F91DD35220F33D3C00864459 /* PlanViewController.swift */,
-				F91DD3D220F35BF000864459 /* PlanDetailViewController.swift */,
+				F9ECE70E20F768BC0063949F /* Presentation */,
+				F91DD3C120F355B100864459 /* Operation */,
+				F9ECE70F20F768ED0063949F /* DataAccess */,
+				F91DD3BC20F34AEB00864459 /* storyboards */,
 				F91DD35720F33D3D00864459 /* Assets.xcassets */,
 				F91DD35C20F33D3D00864459 /* Info.plist */,
 			);
@@ -214,7 +218,35 @@
 			path = storyboards;
 			sourceTree = "<group>";
 		};
-		F91DD3C120F355B100864459 /* Objects */ = {
+		F91DD3C120F355B100864459 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				F9ECE71020F7692D0063949F /* Model */,
+				F91DD3D020F3566500864459 /* Extensions.swift */,
+			);
+			name = Operation;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F9ECE70E20F768BC0063949F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F9ECE71120F7694C0063949F /* HomeView */,
+				F9ECE71220F769690063949F /* PlanView */,
+				F9ECE71320F769740063949F /* WebView */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F9ECE70F20F768ED0063949F /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD3CE20F3563600864459 /* Webservice.swift */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		F9ECE71020F7692D0063949F /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				F91DD3C420F3560800864459 /* Accept.swift */,
@@ -224,8 +256,35 @@
 				F91DD3C720F3560800864459 /* Type.swift */,
 				F91DD3C620F3560800864459 /* User.swift */,
 			);
-			name = Objects;
-			path = "New Group";
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9ECE71120F7694C0063949F /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD35020F33D3C00864459 /* HomeViewController.swift */,
+				F9ECE71420F76B080063949F /* PersonalViewController.swift */,
+				F9ECE71620F76C140063949F /* TradeViewController.swift */,
+				F9ECE71A20F773FD0063949F /* CalendarViewController.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		F9ECE71220F769690063949F /* PlanView */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD3D220F35BF000864459 /* PlanDetailViewController.swift */,
+				F91DD35220F33D3C00864459 /* PlanViewController.swift */,
+			);
+			path = PlanView;
+			sourceTree = "<group>";
+		};
+		F9ECE71320F769740063949F /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD3BD20F34E8600864459 /* WebViewController.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,11 +447,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-schicht_storyboard/Pods-schicht_storyboard-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewPager-Swift/ViewPager_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewPager_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9ECE71B20F773FD0063949F /* CalendarViewController.swift in Sources */,
 				F91DD3CA20F3560800864459 /* Accept.swift in Sources */,
 				F91DD3BE20F34E8700864459 /* WebViewController.swift in Sources */,
 				F91DD35320F33D3C00864459 /* PlanViewController.swift in Sources */,
@@ -452,6 +514,8 @@
 				F91DD3CD20F3560800864459 /* Type.swift in Sources */,
 				F91DD3D120F3566500864459 /* Extensions.swift in Sources */,
 				F91DD3CC20F3560800864459 /* User.swift in Sources */,
+				F9ECE71520F76B080063949F /* PersonalViewController.swift in Sources */,
+				F9ECE71720F76C140063949F /* TradeViewController.swift in Sources */,
 				F91DD3CB20F3560800864459 /* Schicht2Change.swift in Sources */,
 				F91DD3C820F3560800864459 /* Group.swift in Sources */,
 				F91DD35120F33D3C00864459 /* HomeViewController.swift in Sources */,

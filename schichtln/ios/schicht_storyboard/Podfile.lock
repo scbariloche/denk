@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (4.7.2)
+  - FSCalendar (2.7.9)
   - ViewPager-Swift (1.2.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - FSCalendar
   - ViewPager-Swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - FSCalendar
     - ViewPager-Swift
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
   ViewPager-Swift: 2ec693504b75e818fc86437499860b64f0331b22
 
-PODFILE CHECKSUM: 38314b49b0634745457cba235bc47438bfc05e67
+PODFILE CHECKSUM: 8cd389a406b231302e14d1bf101b72252200c593
 
 COCOAPODS: 1.5.3

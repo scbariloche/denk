@@ -8,7 +8,7 @@ target 'schicht_storyboard' do
   # Pods for schicht_storyboard
   pod 'Alamofire', '~> 4.7'
   pod 'ViewPager-Swift'
-
+  pod 'FSCalendar'
 
   target 'schicht_storyboardTests' do
     inherit! :search_paths
