@@ -34,11 +34,10 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addGestureRecognizer(self.scopeGesture)
-        get_all_schicht_by_day(date: Date(timeIntervalSinceNow: 0), on_success: {schichts in self.schichts = schichts }, on_error: {error in print(error)})
-        //        calendarView.scope = .month
-        //        calendarTable.delegate = self
-        // Do any additional setup after loading the view.
+        self.calendarView.addGestureRecognizer(self.scopeGesture)
+        get_all_schicht_by_day(date: Date(timeIntervalSinceNow: 0), on_success: {schichts in self.schichts = schichts
+            self.calendarTableView.reloadData()}, on_error: {error in print(error)})
+        calendarView.scope = .week
     }
 
     override func didReceiveMemoryWarning() {

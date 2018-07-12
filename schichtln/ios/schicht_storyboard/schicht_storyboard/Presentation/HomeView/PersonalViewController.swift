@@ -11,11 +11,13 @@ import UIKit
 
 class PersonalViewCell:UITableViewCell{
    
+    @IBOutlet weak var label: UILabel!
 }
 class PersonalViewController: UITableViewController {
 
 
-    var user = User()
+    @IBOutlet var personalTableView: UITableView!
+    var user = test_user
     var schichts: [Schicht] = []
 
     override func viewDidLoad() {
@@ -23,7 +25,7 @@ class PersonalViewController: UITableViewController {
         get_all_schichten_by_user(
             user: user,on_success: {
                 schichts in self.schichts = schichts
-//                self.planTableView.reloadData()
+                self.personalTableView.reloadData()
         },on_error: {
             error in
 
@@ -57,7 +59,7 @@ class PersonalViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personalViewCell", for: indexPath) as! PersonalViewCell
-    
+        cell.label.text=schichts[indexPath.row].type.description
 
         return cell
     }

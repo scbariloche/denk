@@ -13,10 +13,10 @@ import ViewPager_Swift
 class PlanViewController: UIViewController {
 
     @IBAction func btn_login_action(_ sender: Any) {
-        print("login")
+    print("login")
+
     }
-    @IBOutlet weak var btn_login: UIBarButtonItem!
-    
+
     var positions:[Group] = []
     var tabs: [ViewPagerTab] = [ViewPagerTab(title: "", image: nil)
     ]

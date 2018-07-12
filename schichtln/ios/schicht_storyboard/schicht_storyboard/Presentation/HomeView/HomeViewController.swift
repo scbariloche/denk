@@ -60,6 +60,7 @@ class HomeViewController: UIViewController {
 
         options.viewPagerFrame = self.view.bounds
     }
+    
 }
 
 
