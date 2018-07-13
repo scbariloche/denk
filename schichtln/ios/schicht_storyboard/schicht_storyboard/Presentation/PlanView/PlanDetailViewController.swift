@@ -26,6 +26,7 @@ class PlanDetailViewController: UITableViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        planTableView.tableFooterView = UIView()
         get_all_schicht_by_position(
             group: position,on_success: {
                 schichts in self.schichts = schichts

@@ -14,8 +14,8 @@ class HomeViewController: UIViewController {
     
     var tabs: [ViewPagerTab] = [
         ViewPagerTab(title: "Kalender", image: nil),
-        ViewPagerTab(title: "meine Schichten", image: nil),
-        ViewPagerTab(title: "Tauschbörse", image: nil)
+        ViewPagerTab(title: "meine Schichten", image: UIImage(named: "offered")),
+        ViewPagerTab(title: "Tauschbörse", image: UIImage(named: "for_trade"))
     ]
 
     var viewPager:ViewPagerController!
@@ -28,12 +28,13 @@ class HomeViewController: UIViewController {
 
 
         options = ViewPagerOptions(viewPagerWithFrame: self.view.bounds)
-        options.tabType = ViewPagerTabType.basic
+        options.tabType = ViewPagerTabType.image
         options.tabViewImageSize = CGSize(width: 20, height: 20)
         options.tabViewTextFont = UIFont.systemFont(ofSize: 16)
         options.tabViewPaddingLeft = 20
         options.tabViewPaddingRight = 20
-        options.isTabHighlightAvailable = true
+        options.isTabHighlightAvailable = false
+        options.tabIndicatorViewBackgroundColor = UIColor(named: "colorAccent")!
         options.isEachTabEvenlyDistributed = true
         options.fitAllTabsInView = true
 

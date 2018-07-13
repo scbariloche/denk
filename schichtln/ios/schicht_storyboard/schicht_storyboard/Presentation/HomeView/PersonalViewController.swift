@@ -10,11 +10,18 @@ import UIKit
 
 
 class PersonalViewCell:UITableViewCell{
-   
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var img_acc: UIImageView!
+    @IBOutlet weak var img_state: UIImageView!
+
+    @IBOutlet weak var lblDate: UILabel!
+    @IBOutlet weak var lblType: UILabel!
 }
 class PersonalViewController: UITableViewController {
-
+    fileprivate lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EE. dd.MM.yy"
+        return formatter
+    }()
 
     @IBOutlet var personalTableView: UITableView!
     var user = test_user
@@ -22,6 +29,7 @@ class PersonalViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        personalTableView.tableFooterView = UIView()
         get_all_schichten_by_user(
             user: user,on_success: {
                 schichts in self.schichts = schichts
@@ -58,9 +66,13 @@ class PersonalViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let schicht = schichts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "personalViewCell", for: indexPath) as! PersonalViewCell
-        cell.label.text=schichts[indexPath.row].type.description
+        cell.lblType.text=schicht.type.description
+        cell.lblDate.text = self.dateFormatter.string(from: schicht.day)
 
+        cell.img_acc.image = UIImage(named: schicht.accept.icon)
+        cell.img_state.image = UIImage(named: schicht.state.rawValue)
         return cell
     }
 

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +13,7 @@
         <scene sceneID="YDp-w8-Rqu">
             <objects>
                 <navigationController id="tco-uq-TAw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pläne" image="ic_dashboard_48pt" selectedImage="ic_dashboard_white_48pt" id="FC4-bV-fgT"/>
+                    <tabBarItem key="tabBarItem" title="Pläne" image="ic_dashboard_36pt" selectedImage="ic_dashboard_36pt" id="FC4-bV-fgT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tx6-6O-ouR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -106,7 +105,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_dashboard_48pt" width="48" height="48"/>
-        <image name="ic_dashboard_white_48pt" width="48" height="48"/>
+        <image name="ic_dashboard_36pt" width="36" height="36"/>
     </resources>
 </document>

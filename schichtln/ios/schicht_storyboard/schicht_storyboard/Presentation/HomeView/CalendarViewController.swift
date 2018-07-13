@@ -34,6 +34,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        calendarTableView.tableFooterView = UIView()
         self.calendarView.addGestureRecognizer(self.scopeGesture)
         get_all_schicht_by_day(date: Date(timeIntervalSinceNow: 0), on_success: {schichts in self.schichts = schichts
             self.calendarTableView.reloadData()}, on_error: {error in print(error)})
@@ -83,10 +84,12 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let schicht = schichts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "calendarViewCell", for: indexPath) as! CalendarViewCell
+        cell.lbl_name.text = schicht.user.username
+        cell.lbl_type.text = schicht.type.description
 
-cell.label.text = schichts[indexPath.row].type.description
-       print(schichts[indexPath.row])
+        cell.img_acc.image = UIImage(named: schicht.accept.icon)
         return cell
     }
     /*
@@ -102,7 +105,9 @@ cell.label.text = schichts[indexPath.row].type.description
 }
 
 class CalendarViewCell:UITableViewCell{
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var lbl_name: UILabel!
+    @IBOutlet weak var lbl_type: UILabel!
 
+    @IBOutlet weak var img_acc: UIImageView!
     
 }
