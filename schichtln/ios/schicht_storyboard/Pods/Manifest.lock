@@ -1,24 +1,36 @@
 PODS:
   - Alamofire (4.7.2)
+  - DynamicBlurView (2.0.2)
   - FSCalendar (2.7.9)
+  - PopupDialog (0.7.1):
+    - DynamicBlurView (~> 2.0)
+  - SelectionDialog (2.0.0)
   - ViewPager-Swift (1.2.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - FSCalendar
+  - PopupDialog
+  - SelectionDialog
   - ViewPager-Swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - DynamicBlurView
     - FSCalendar
+    - PopupDialog
+    - SelectionDialog
     - ViewPager-Swift
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
   FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
+  PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
+  SelectionDialog: 4359518dc191fb10f9699fcf36a9b81687257f13
   ViewPager-Swift: 2ec693504b75e818fc86437499860b64f0331b22
 
-PODFILE CHECKSUM: 8cd389a406b231302e14d1bf101b72252200c593
+PODFILE CHECKSUM: 8df9fa32bf7d638efd04c3ef5e804be8f4575d8a
 
 COCOAPODS: 1.5.3

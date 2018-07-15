@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E5E6E6DD1D1E28A93875CE7FFF7075B6"
+               BlueprintIdentifier = "94DF53634626996C47395785800BB824"
                BuildableName = "ViewPager_Swift.framework"
                BlueprintName = "ViewPager-Swift"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E5E6E6DD1D1E28A93875CE7FFF7075B6"
+            BlueprintIdentifier = "94DF53634626996C47395785800BB824"
             BuildableName = "ViewPager_Swift.framework"
             BlueprintName = "ViewPager-Swift"
             ReferencedContainer = "container:Pods.xcodeproj">

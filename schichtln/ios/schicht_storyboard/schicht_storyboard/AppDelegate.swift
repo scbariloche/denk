@@ -7,16 +7,31 @@
 //
 
 import UIKit
+import PopupDialog
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+var ready = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        test_user.id = 40
+
+
+
+//        get_user_by_name(name: "Andi", on_success: { (user) in
+//            StoredValues.user = user
+//            self.ready=true
+//      self.application(application, didFinishLaunchingWithOptions: launchOptions)
+//
+//        }) { (error) in
+//            print(error.rawValue)
+//        }
+//
+//
+//        test_user.id = 40
+//        StoredValues.user = test_user
         return true
     }
 
@@ -35,6 +50,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        if StoredValues.user ==  nil{
+            // Create the dialog
+            let popup = PopupDialog(title: "anmelden?", message: "wirklich", image: nil)
+
+            // Present dialog
+//            self.window?.rootViewController?.present(popup, animated: true, completion: nil)
+LoginService.callLoginDialog(from: window?.rootViewController)
+            // Get the default view controller and cast it
+            // Unfortunately, casting is necessary to support Objective-C
+//            let vc = popup.viewController as! PopupDialogDefaultViewController
+//
+//            // Set dialog properties
+//
+//            vc.titleText = "..."
+//            vc.messageText = "..."
+//            vc.buttonAlignment = .horizontal
+//            vc.transitionStyle = .bounceUp
+//startLoginDialog
+        }
+
+
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 

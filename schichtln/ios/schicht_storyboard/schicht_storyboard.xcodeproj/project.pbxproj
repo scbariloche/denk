@@ -32,6 +32,8 @@
 		F91DD3CF20F3563700864459 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3CE20F3563600864459 /* Webservice.swift */; };
 		F91DD3D120F3566500864459 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3D020F3566500864459 /* Extensions.swift */; };
 		F91DD3D320F35BF000864459 /* PlanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3D220F35BF000864459 /* PlanDetailViewController.swift */; };
+		F9BA6CD220FB58E8008C6B33 /* StoredValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA6CD120FB58E8008C6B33 /* StoredValues.swift */; };
+		F9BA6CD520FB6A7C008C6B33 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA6CD420FB6A7C008C6B33 /* LoginService.swift */; };
 		F9ECE71520F76B080063949F /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECE71420F76B080063949F /* PersonalViewController.swift */; };
 		F9ECE71720F76C140063949F /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECE71620F76C140063949F /* TradeViewController.swift */; };
 		F9ECE71B20F773FD0063949F /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECE71A20F773FD0063949F /* CalendarViewController.swift */; };
@@ -92,6 +94,8 @@
 		F91DD3CE20F3563600864459 /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		F91DD3D020F3566500864459 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F91DD3D220F35BF000864459 /* PlanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewController.swift; sourceTree = "<group>"; };
+		F9BA6CD120FB58E8008C6B33 /* StoredValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredValues.swift; sourceTree = "<group>"; };
+		F9BA6CD420FB6A7C008C6B33 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		F9ECE71420F76B080063949F /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		F9ECE71620F76C140063949F /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
 		F9ECE71A20F773FD0063949F /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -221,11 +225,20 @@
 		F91DD3C120F355B100864459 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
+				F9BA6CD320FB6A54008C6B33 /* Login */,
 				F9ECE71020F7692D0063949F /* Model */,
 				F91DD3D020F3566500864459 /* Extensions.swift */,
 			);
 			name = Operation;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F9BA6CD320FB6A54008C6B33 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F9BA6CD420FB6A7C008C6B33 /* LoginService.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		F9ECE70E20F768BC0063949F /* Presentation */ = {
@@ -242,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				F91DD3CE20F3563600864459 /* Webservice.swift */,
+				F9BA6CD120FB58E8008C6B33 /* StoredValues.swift */,
 			);
 			path = DataAccess;
 			sourceTree = "<group>";
@@ -447,13 +461,19 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-schicht_storyboard/Pods-schicht_storyboard-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/SelectionDialog/SelectionDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewPager-Swift/ViewPager_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SelectionDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewPager_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +529,7 @@
 				F91DD3BE20F34E8700864459 /* WebViewController.swift in Sources */,
 				F91DD35320F33D3C00864459 /* PlanViewController.swift in Sources */,
 				F91DD3C920F3560800864459 /* Schicht.swift in Sources */,
+				F9BA6CD220FB58E8008C6B33 /* StoredValues.swift in Sources */,
 				F91DD3CF20F3563700864459 /* Webservice.swift in Sources */,
 				F91DD34F20F33D3C00864459 /* AppDelegate.swift in Sources */,
 				F91DD3CD20F3560800864459 /* Type.swift in Sources */,
@@ -516,6 +537,7 @@
 				F91DD3CC20F3560800864459 /* User.swift in Sources */,
 				F9ECE71520F76B080063949F /* PersonalViewController.swift in Sources */,
 				F9ECE71720F76C140063949F /* TradeViewController.swift in Sources */,
+				F9BA6CD520FB6A7C008C6B33 /* LoginService.swift in Sources */,
 				F91DD3CB20F3560800864459 /* Schicht2Change.swift in Sources */,
 				F91DD3C820F3560800864459 /* Group.swift in Sources */,
 				F91DD35120F33D3C00864459 /* HomeViewController.swift in Sources */,

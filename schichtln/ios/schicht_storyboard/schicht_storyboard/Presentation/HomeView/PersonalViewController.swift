@@ -24,11 +24,12 @@ class PersonalViewController: UITableViewController {
     }()
 
     @IBOutlet var personalTableView: UITableView!
-    var user = test_user
+    var user = User()
     var schichts: [Schicht] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        user = StoredValues.user
         personalTableView.tableFooterView = UIView()
         get_all_schichten_by_user(
             user: user,on_success: {

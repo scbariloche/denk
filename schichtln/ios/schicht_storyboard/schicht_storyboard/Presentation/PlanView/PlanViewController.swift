@@ -42,7 +42,7 @@ class PlanViewController: UIViewController {
         
 
         
-        get_positions_by_user(user: test_user, on_success: { positions in
+        get_positions_by_user(user: StoredValues.user!, on_success: { positions in
             self.tabs.removeAll()
             self.positions=positions
             for p in positions{

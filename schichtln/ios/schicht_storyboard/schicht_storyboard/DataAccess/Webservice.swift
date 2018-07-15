@@ -12,7 +12,6 @@ import Alamofire
 let ip = "dugon.de"
 let url = "http://\(ip)/"
 
-var test_user = User()
 
 
 
