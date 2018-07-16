@@ -7,8 +7,16 @@
 //
 
 import Foundation
+
+public enum acceptDescription: String, Codable{
+    case accepted = "accepted"
+    case deleted = "deleted"
+    case pending = "pending"
+
+}
+
 public struct Accept:Codable{
     public var id:Int = 0
-    public var description:String = ""
+    public var description:acceptDescription = .accepted
     public var icon :String = ""
 }

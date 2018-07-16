@@ -10,12 +10,13 @@ import UIKit
 
 
 class PlanDetailCell:UITableViewCell{
-    @IBAction func action(_ sender: Any) {
-        print("aaaaction")
-    }
     
-    @IBOutlet weak var lbl: UILabel!
-   
+    @IBOutlet weak var lbl_date: UILabel!
+    @IBOutlet weak var lbl_type: UILabel!
+    
+    @IBOutlet weak var img_acc: UIImageView!
+    @IBOutlet weak var img_state: UIImageView!
+
    }
 class PlanDetailViewController: UITableViewController {
  
@@ -61,11 +62,21 @@ class PlanDetailViewController: UITableViewController {
         return schichts.count
     }
 
-    
+ 
+    fileprivate lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EE. dd.MM.yy"
+        return formatter
+    }()
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "planDetailCell", for: indexPath) as! PlanDetailCell
-        cell.lbl.text = schichts[indexPath.row].type.description
-        
+        let schicht = schichts[indexPath.row]
+        cell.lbl_date.text = dateFormatter.string(from: schicht.day)
+        cell.lbl_type.text = schicht.type.description
+
+        cell.img_acc.image = UIImage(named: schicht.accept.icon)
+        cell.img_state.image = UIImage(named: schicht.state.rawValue)
+
 
         return cell
     }

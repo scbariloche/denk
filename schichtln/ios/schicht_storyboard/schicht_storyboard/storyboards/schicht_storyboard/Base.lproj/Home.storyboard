@@ -22,7 +22,11 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="o0I-TL-IAr">
-                        <barButtonItem key="rightBarButtonItem" title="login" id="1aO-fA-4S5"/>
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="1aO-fA-4S5">
+                            <connections>
+                                <action selector="btn_logout:" destination="9pv-A4-QxB" id="3XZ-9S-jvA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -60,19 +64,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOM-NP-LjX">
-                                                    <rect key="frame" x="15" y="11" width="42" height="22"/>
+                                                    <rect key="frame" x="15" y="11" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVy-mg-7Yy">
-                                                    <rect key="frame" x="135" y="11" width="42" height="22"/>
+                                                    <rect key="frame" x="135" y="11" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_dot" translatesAutoresizingMaskIntoConstraints="NO" id="NgI-5s-zja">
-                                                    <rect key="frame" x="185" y="-42" width="240" height="128"/>
+                                                    <rect key="frame" x="343" y="8" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="J5d-O5-goW"/>
                                                         <constraint firstAttribute="height" constant="24" id="kku-9F-tMC"/>
@@ -252,7 +256,6 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="for_trade_with_offer" translatesAutoresizingMaskIntoConstraints="NO" id="DIX-Wn-CoK">
                                             <rect key="frame" x="311" y="8" width="24" height="24"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="UIq-I1-k4N"/>
                                                 <constraint firstAttribute="height" constant="24" id="h1U-F6-tcu"/>
                                                 <constraint firstAttribute="width" constant="24" id="u4I-tf-08b"/>
                                             </constraints>

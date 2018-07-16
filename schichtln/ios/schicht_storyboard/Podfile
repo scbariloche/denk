@@ -11,6 +11,8 @@ target 'schicht_storyboard' do
   pod 'FSCalendar'
   pod 'PopupDialog'
   pod 'SelectionDialog'
+  pod 'IDZSwiftCommonCrypto', '~> 0.9.1'
+  pod 'PBKDF2'
 
   target 'schicht_storyboardTests' do
     inherit! :search_paths

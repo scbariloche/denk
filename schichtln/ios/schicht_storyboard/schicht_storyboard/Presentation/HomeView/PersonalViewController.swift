@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SelectionDialog
+import PopupDialog
+
 
 
 class PersonalViewCell:UITableViewCell{
@@ -24,12 +27,10 @@ class PersonalViewController: UITableViewController {
     }()
 
     @IBOutlet var personalTableView: UITableView!
-    var user = User()
+
     var schichts: [Schicht] = []
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        user = StoredValues.user
+    fileprivate func init_view(for user: User) {
         personalTableView.tableFooterView = UIView()
         get_all_schichten_by_user(
             user: user,on_success: {
@@ -38,7 +39,17 @@ class PersonalViewController: UITableViewController {
         },on_error: {
             error in
 
-        })
+        } )
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if let   user = StoredValues.user{
+            init_view(for: user)
+            
+        } else {
+            LoginService.callLoginDialog(from: self, completion: {user in self.init_view(for: user)})
+        }
 
 
         // Uncomment the following line to preserve selection between presentations
@@ -54,6 +65,38 @@ class PersonalViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+
+
+
+    override  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedSchicht = schichts[indexPath.row]
+
+        switch selectedSchicht.accept.description {
+        case .accepted:
+            let popup = SelectionDialog(title: "was willst du tun?", closeButtonTitle: "close")
+            //            "offen anbieten", "jemanden anbieten", "zum Tausch anbieten"
+            popup.addItem(item: "offen anbieten", didTapHandler: {
+                update_schicht(oldschicht: selectedSchicht,
+                               newschicht: Schicht2Change(schicht: selectedSchicht, state: .open),
+                               on_success: {
+                                self.init_view(for: StoredValues.user!)
+                                sendMessage(to: "position\(selectedSchicht.type.id)", body: "nimm!")
+                                popup.close()
+                },
+                               on_error: {
+                                error in print(error)}
+                )
+            }
+            )
+            popup.show()
+            print("ok")
+        case .pending:
+            handlePending(selectedSchicht)
+        case .deleted:
+           handleDeleted(selectedSchicht)
+        }
+
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -77,7 +120,29 @@ class PersonalViewController: UITableViewController {
         return cell
     }
 
+    fileprivate func handlePending(_ selectedSchicht: Schicht) {
+        let popup = PopupDialog(title: "diese Schicht wurde geändert", message: "", image: nil, buttonAlignment: .horizontal, transitionStyle: .zoomIn , preferredWidth: CGFloat(80), gestureDismissal: true, hideStatusBar: true, completion:  nil)
+        let okBtn = DefaultButton(title: "OK", dismissOnTap:true){
+            update_schicht(oldschicht: selectedSchicht, newschicht: Schicht2Change(schicht:selectedSchicht,accept_id:1), on_success: {
+                self.init_view(for: StoredValues.user!)
 
+            }, on_error: {error in print(error)})
+
+        }
+        popup.addButton(okBtn)
+        self.present(popup, animated: true, completion: nil)
+    }
+    fileprivate func handleDeleted(_ selectedSchicht: Schicht) {
+        let popup = PopupDialog(title: "diese Schicht wurde gestrichen", message: "", image: nil, buttonAlignment: .horizontal, transitionStyle: .zoomIn , preferredWidth: CGFloat(80), gestureDismissal: true, hideStatusBar: true, completion:  nil)
+        let okBtn = DefaultButton(title: "OK", dismissOnTap:true){
+            delete_schicht(schicht: selectedSchicht, on_success: {
+                self.init_view(for: StoredValues.user!)
+            })
+
+        }
+        popup.addButton(okBtn)
+        self.present(popup, animated: true, completion: nil)
+    }
 
     /*
      // MARK: - Navigation

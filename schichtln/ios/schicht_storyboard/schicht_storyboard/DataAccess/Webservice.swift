@@ -136,12 +136,14 @@ func update_schicht(oldschicht: Schicht, newschicht: Schicht2Change, on_success:
     
     get_schicht_by_id(id:newschicht.id, on_success:{ it in
         if (it.is_same_as(schicht:oldschicht)) {
-            
-            let jsonData = try! JSONEncoder().encode(newschicht)
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .formatted(Formatter.iso8601)
+            let jsonData = try! encoder.encode(newschicht)
             var request = URLRequest(url: URL(string:"\(url)changeschicht/\(newschicht.id)/")!)
-            request.httpMethod = HTTPMethod.put.rawValue
+            request.httpMethod = HTTPMethod.post.rawValue
             request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             request.httpBody = jsonData
+            
             
             
             Alamofire.request(request).responseJSON{it in

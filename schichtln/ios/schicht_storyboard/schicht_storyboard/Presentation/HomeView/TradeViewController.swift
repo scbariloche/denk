@@ -21,21 +21,18 @@ class TradeViewController: UITableViewController {
     @IBOutlet var tradeTableView: UITableView!
 
 
-    var user = User()
     var schichts: [Schicht] = []
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tradeTableView.tableFooterView = UIView()
-        get_open_schicht_by_user(
-            user: user,on_success: {
-                schichts in self.schichts = schichts
-                self.tradeTableView.reloadData()
-        },on_error: {
-            error in
-
-        })
-
+        if let user = StoredValues.user{
+            init_view(for: user)
+        }else{
+            LoginService.callLoginDialog(from: self, completion: {user in self.init_view(for: user)}
+            )
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -78,7 +75,17 @@ class TradeViewController: UITableViewController {
 
         return cell
     }
+    fileprivate func init_view(for user: User) {
+        tradeTableView.tableFooterView = UIView()
+        get_open_schicht_by_user(
+            user: user,on_success: {
+                schichts in self.schichts = schichts
+                self.tradeTableView.reloadData()
+        },on_error: {
+            error in
 
+        })
+    }
 
 
 }

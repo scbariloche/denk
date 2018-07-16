@@ -34,6 +34,10 @@
 		F91DD3D320F35BF000864459 /* PlanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3D220F35BF000864459 /* PlanDetailViewController.swift */; };
 		F9BA6CD220FB58E8008C6B33 /* StoredValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA6CD120FB58E8008C6B33 /* StoredValues.swift */; };
 		F9BA6CD520FB6A7C008C6B33 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA6CD420FB6A7C008C6B33 /* LoginService.swift */; };
+		F9BA6CD920FC7B8C008C6B33 /* LoginDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA6CD720FC7B8C008C6B33 /* LoginDialogController.swift */; };
+		F9BA6CDA20FC7B8C008C6B33 /* LoginDialogController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9BA6CD820FC7B8C008C6B33 /* LoginDialogController.xib */; };
+		F9BA6CDC20FC84B0008C6B33 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BA6CDB20FC84B0008C6B33 /* Security.framework */; };
+		F9BA6CE520FCE17B008C6B33 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA6CE420FCE17B008C6B33 /* Message.swift */; };
 		F9ECE71520F76B080063949F /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECE71420F76B080063949F /* PersonalViewController.swift */; };
 		F9ECE71720F76C140063949F /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECE71620F76C140063949F /* TradeViewController.swift */; };
 		F9ECE71B20F773FD0063949F /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECE71A20F773FD0063949F /* CalendarViewController.swift */; };
@@ -68,7 +72,7 @@
 		EBBD8DF728B6C6CDA547E714 /* Pods-schicht_storyboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schicht_storyboardUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-schicht_storyboardUITests/Pods-schicht_storyboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F91DD34B20F33D3C00864459 /* schicht_storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schicht_storyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91DD34E20F33D3C00864459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F91DD35020F33D3C00864459 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F91DD35020F33D3C00864459 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		F91DD35220F33D3C00864459 /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		F91DD35520F33D3C00864459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F91DD35720F33D3D00864459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,10 +100,14 @@
 		F91DD3D220F35BF000864459 /* PlanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewController.swift; sourceTree = "<group>"; };
 		F9BA6CD120FB58E8008C6B33 /* StoredValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredValues.swift; sourceTree = "<group>"; };
 		F9BA6CD420FB6A7C008C6B33 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		F9BA6CD720FC7B8C008C6B33 /* LoginDialogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDialogController.swift; sourceTree = "<group>"; };
+		F9BA6CD820FC7B8C008C6B33 /* LoginDialogController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginDialogController.xib; sourceTree = "<group>"; };
+		F9BA6CDB20FC84B0008C6B33 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F9BA6CDE20FC8A13008C6B33 /* schicht_storyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "schicht_storyboard-Bridging-Header.h"; sourceTree = "<group>"; };
+		F9BA6CE420FCE17B008C6B33 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		F9ECE71420F76B080063949F /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		F9ECE71620F76C140063949F /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
 		F9ECE71A20F773FD0063949F /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		F9ECE71C20F77DE00063949F /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9BA6CDC20FC84B0008C6B33 /* Security.framework in Frameworks */,
 				F91DD38D20F344EF00864459 /* WebKit.framework in Frameworks */,
 				F59615D0594543ADE75AE1B1 /* Pods_schicht_storyboard.framework in Frameworks */,
 			);
@@ -147,13 +156,13 @@
 		F91DD34220F33D3C00864459 = {
 			isa = PBXGroup;
 			children = (
-				F9ECE71C20F77DE00063949F /* Header.h */,
 				F91DD34D20F33D3C00864459 /* schicht_storyboard */,
 				F91DD36420F33D3D00864459 /* schicht_storyboardTests */,
 				F91DD36F20F33D3D00864459 /* schicht_storyboardUITests */,
 				F91DD34C20F33D3C00864459 /* Products */,
 				F91DD38B20F344EE00864459 /* Frameworks */,
 				124245E97397912E8E2B1384 /* Pods */,
+				F9BA6CDE20FC8A13008C6B33 /* schicht_storyboard-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +211,7 @@
 		F91DD38B20F344EE00864459 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F9BA6CDB20FC84B0008C6B33 /* Security.framework */,
 				F91DD38C20F344EF00864459 /* WebKit.framework */,
 				BF22A99CAE35EA3E813A4D24 /* Pods_schicht_storyboard.framework */,
 				E3B25152C5BEEFBFEE475EB3 /* Pods_schicht_storyboardTests.framework */,
@@ -213,6 +223,7 @@
 		F91DD3BC20F34AEB00864459 /* storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				F9BA6CD820FC7B8C008C6B33 /* LoginDialogController.xib */,
 				F91DD35920F33D3D00864459 /* LaunchScreen.storyboard */,
 				F91DD38320F33E3800864459 /* Home.storyboard */,
 				F91DD38620F33F2800864459 /* Plan.storyboard */,
@@ -225,6 +236,7 @@
 		F91DD3C120F355B100864459 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
+				F9BA6CE320FCE144008C6B33 /* Notifications */,
 				F9BA6CD320FB6A54008C6B33 /* Login */,
 				F9ECE71020F7692D0063949F /* Model */,
 				F91DD3D020F3566500864459 /* Extensions.swift */,
@@ -241,9 +253,26 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		F9BA6CD620FC7B64008C6B33 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				F9BA6CD720FC7B8C008C6B33 /* LoginDialogController.swift */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		F9BA6CE320FCE144008C6B33 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				F9BA6CE420FCE17B008C6B33 /* Message.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		F9ECE70E20F768BC0063949F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F9BA6CD620FC7B64008C6B33 /* Dialogs */,
 				F9ECE71120F7694C0063949F /* HomeView */,
 				F9ECE71220F769690063949F /* PlanView */,
 				F9ECE71320F769740063949F /* WebView */,
@@ -373,6 +402,7 @@
 				TargetAttributes = {
 					F91DD34A20F33D3C00864459 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					F91DD36020F33D3D00864459 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -409,6 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9BA6CDA20FC7B8C008C6B33 /* LoginDialogController.xib in Resources */,
 				F91DD35B20F33D3D00864459 /* LaunchScreen.storyboard in Resources */,
 				F91DD38720F33F2800864459 /* Plan.storyboard in Resources */,
 				F91DD38520F33E3800864459 /* Home.storyboard in Resources */,
@@ -463,6 +494,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/IDZSwiftCommonCrypto/IDZSwiftCommonCrypto.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/SelectionDialog/SelectionDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewPager-Swift/ViewPager_Swift.framework",
@@ -472,6 +504,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IDZSwiftCommonCrypto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SelectionDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewPager_Swift.framework",
@@ -536,10 +569,12 @@
 				F91DD3D120F3566500864459 /* Extensions.swift in Sources */,
 				F91DD3CC20F3560800864459 /* User.swift in Sources */,
 				F9ECE71520F76B080063949F /* PersonalViewController.swift in Sources */,
+				F9BA6CD920FC7B8C008C6B33 /* LoginDialogController.swift in Sources */,
 				F9ECE71720F76C140063949F /* TradeViewController.swift in Sources */,
 				F9BA6CD520FB6A7C008C6B33 /* LoginService.swift in Sources */,
 				F91DD3CB20F3560800864459 /* Schicht2Change.swift in Sources */,
 				F91DD3C820F3560800864459 /* Group.swift in Sources */,
+				F9BA6CE520FCE17B008C6B33 /* Message.swift in Sources */,
 				F91DD35120F33D3C00864459 /* HomeViewController.swift in Sources */,
 				F91DD3D320F35BF000864459 /* PlanDetailViewController.swift in Sources */,
 			);
@@ -731,6 +766,7 @@
 			baseConfigurationReference = 3AE5C6001A7058514FFF981E /* Pods-schicht_storyboard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99N3J2UGM9;
 				INFOPLIST_FILE = schicht_storyboard/Info.plist;
@@ -741,6 +777,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "thinkad.schicht-storyboard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "schicht_storyboard-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -751,6 +789,7 @@
 			baseConfigurationReference = 9CFE69B2652268DC437C5BB4 /* Pods-schicht_storyboard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99N3J2UGM9;
 				INFOPLIST_FILE = schicht_storyboard/Info.plist;
@@ -761,6 +800,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "thinkad.schicht-storyboard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "schicht_storyboard-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

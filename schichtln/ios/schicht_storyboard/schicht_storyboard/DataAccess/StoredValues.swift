@@ -10,11 +10,6 @@ import Foundation
 import UIKit
 
 class StoredValues{
-    var viewController: UIViewController
-
-    init(_ view: UIViewController) {
-        self.viewController = view
-    }
 
     static var user:User?{
         set {

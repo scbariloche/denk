@@ -9,9 +9,21 @@
 import UIKit
 
 import ViewPager_Swift
+import PopupDialog
 
 class HomeViewController: UIViewController {
-    
+    @IBAction func btn_logout(_ sender: Any) {
+        let popup = PopupDialog(title: "really?", message: "really, really?")
+       let btn_yep = DefaultButton(title: "yep", dismissOnTap: false){
+        popup.dismiss( {StoredValues.user=nil
+            LoginService.callLoginDialog(from: self, completion: {user in })})
+
+        }
+popup.addButton(btn_yep)
+        self.present(popup,animated: true , completion: nil)
+    }
+
+
     var tabs: [ViewPagerTab] = [
         ViewPagerTab(title: "Kalender", image: nil),
         ViewPagerTab(title: "meine Schichten", image: UIImage(named: "offered")),

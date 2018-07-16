@@ -13,7 +13,8 @@ import ViewPager_Swift
 class PlanViewController: UIViewController {
 
     @IBAction func btn_login_action(_ sender: Any) {
-    print("login")
+   StoredValues.user=nil
+        LoginService.callLoginDialog(from: self, completion: {user in })
 
     }
 
@@ -24,6 +25,8 @@ class PlanViewController: UIViewController {
     var viewPager:ViewPagerController!
     var options:ViewPagerOptions!
     
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,28 +43,13 @@ class PlanViewController: UIViewController {
         options.isEachTabEvenlyDistributed = true
         options.fitAllTabsInView = true
         
-
+        if let user = StoredValues.user{
+            init_view(for: user)
+        }else{
+            LoginService.callLoginDialog(from: self, completion: {user in self.init_view(for: user)})
+        }
         
-        get_positions_by_user(user: StoredValues.user!, on_success: { positions in
-            self.tabs.removeAll()
-            self.positions=positions
-            for p in positions{
-                self.tabs.append(ViewPagerTab(title: p.name, image: nil))
 
-            }
-            self.viewPager = ViewPagerController()
-             self.viewPager.options = self.options
-             self.viewPager.dataSource = self
-             self.viewPager.delegate = self
-
-            self.addChildViewController(self.viewPager)
-            self.view.addSubview( self.viewPager.view)
-             self.viewPager.didMove(toParentViewController: self)
-            self.viewPager.invalidateTabs()
-            
-        }, on_error: {error in
-            
-        })
         
         
     }
@@ -101,5 +89,28 @@ extension PlanViewController: ViewPagerControllerDelegate {
     }
     
     func didMoveToControllerAtIndex(index: Int) {
+    }
+
+    fileprivate func init_view(for user: User) {
+        get_positions_by_user(user: user, on_success: { positions in
+            self.tabs.removeAll()
+            self.positions=positions
+            for p in positions{
+                self.tabs.append(ViewPagerTab(title: p.name, image: nil))
+
+            }
+            self.viewPager = ViewPagerController()
+            self.viewPager.options = self.options
+            self.viewPager.dataSource = self
+            self.viewPager.delegate = self
+
+            self.addChildViewController(self.viewPager)
+            self.view.addSubview( self.viewPager.view)
+            self.viewPager.didMove(toParentViewController: self)
+            self.viewPager.invalidateTabs()
+
+        }, on_error: {error in
+
+        })
     }
 }

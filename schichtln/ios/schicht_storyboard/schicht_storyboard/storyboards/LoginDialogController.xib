@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginDialogController" customModule="schicht_storyboard" customModuleProvider="target">
+            <connections>
+                <outlet property="txt_name" destination="wp7-DU-uyb" id="S89-e4-bUg"/>
+                <outlet property="txt_pass" destination="mNB-0v-76j" id="vyj-2j-FRO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wp7-DU-uyb">
+                    <rect key="frame" x="8" y="28" width="359" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" textContentType="username"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mNB-0v-76j">
+                    <rect key="frame" x="8" y="66" width="359" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wp7-DU-uyb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="JOz-6C-vMj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mNB-0v-76j" secondAttribute="trailing" constant="8" id="PP4-Op-q52"/>
+                <constraint firstItem="mNB-0v-76j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="gng-K9-J5Q"/>
+                <constraint firstItem="wp7-DU-uyb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="olI-0d-0zo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mNB-0v-76j" secondAttribute="bottom" constant="8" id="qdN-CR-bYq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wp7-DU-uyb" secondAttribute="trailing" constant="8" id="u77-dH-S7T"/>
+                <constraint firstItem="mNB-0v-76j" firstAttribute="top" secondItem="wp7-DU-uyb" secondAttribute="bottom" constant="8" id="uuT-Vo-qVf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

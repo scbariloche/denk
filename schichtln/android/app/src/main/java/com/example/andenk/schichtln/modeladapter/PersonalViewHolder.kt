@@ -49,13 +49,14 @@ class PersonalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         itemView.setOnClickListener({ view ->
             when (item.accept.id) {
                 1 -> {
+                    //CASE: someone made an offer for my schicht
                     if (item.state == "for_trade" && item.trade_for_id != null) {
                         get_schicht_by_id(item.trade_for_id!!.toLong(), {
                             val item2 = it
                             createAlert(
                                     context = context,
-                                    message = "${item2.user!!.username} bietet ${item2.type.description} am ${item2.day.format("dd.MM.")}"
-                                    , yesOptionString = "annehmen",
+                                    message = "${item2.user!!.username} bietet ${item2.type.description} am ${item2.day.format("dd.MM.")}",
+                                    yesOptionString = "annehmen",
                                     yesAction = DialogInterface.OnClickListener({ _: DialogInterface, _: Int ->
                                         update_schicht(item,
                                                 Schicht2Change(
@@ -121,7 +122,9 @@ class PersonalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
                         }, {})
 
 
-                    } else {
+                    } else
+//                    CASE: accepted and closed
+                    {
 
 
                         val optionsList = mutableListOf<Any>("offen anbieten", "jemanden anbieten", "zum Tausch anbieten")

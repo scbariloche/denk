@@ -323,5 +323,101 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "schicht_storyboard/DataAccess/Webservice.swift"
+            timestampString = "553451370.588181"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "update_schicht(oldschicht:newschicht:on_success:on_error:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "schicht_storyboard/DataAccess/Webservice.swift"
+            timestampString = "553451370.588501"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "update_schicht(oldschicht:newschicht:on_success:on_error:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "schicht_storyboard/DataAccess/Webservice.swift"
+            timestampString = "553451370.588567"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "update_schicht(oldschicht:newschicht:on_success:on_error:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "schicht_storyboard/DataAccess/Webservice.swift"
+            timestampString = "553451370.588634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "update_schicht(oldschicht:newschicht:on_success:on_error:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (schicht_storyboard.Schicht) -&gt; () in schicht_storyboard.update_schicht(oldschicht: schicht_storyboard.Schicht, newschicht: schicht_storyboard.Schicht2Change, on_success: () -&gt; (), on_error: (schicht_storyboard.WebserviceError) -&gt; ()) -&gt; ()"
+                  moduleName = "schicht_storyboard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schicht_storyboard/schicht_storyboard/DataAccess/Webservice.swift"
+                  timestampString = "553450446.817014"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "1648">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in closure #1 (schicht_storyboard.Schicht) -&gt; () in schicht_storyboard.update_schicht(oldschicht: schicht_storyboard.Schicht, newschicht: schicht_storyboard.Schicht2Change, on_success: () -&gt; (), on_error: (schicht_storyboard.WebserviceError) -&gt; ()) -&gt; ()"
+                  moduleName = "schicht_storyboard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schicht_storyboard/schicht_storyboard/DataAccess/Webservice.swift"
+                  timestampString = "553450446.818803"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "150"
+                  endingLineNumber = "150"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

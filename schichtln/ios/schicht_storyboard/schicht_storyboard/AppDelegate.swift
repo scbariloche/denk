@@ -51,26 +51,8 @@ var ready = false
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         if StoredValues.user ==  nil{
-            // Create the dialog
-            let popup = PopupDialog(title: "anmelden?", message: "wirklich", image: nil)
-
-            // Present dialog
-//            self.window?.rootViewController?.present(popup, animated: true, completion: nil)
-LoginService.callLoginDialog(from: window?.rootViewController)
-            // Get the default view controller and cast it
-            // Unfortunately, casting is necessary to support Objective-C
-//            let vc = popup.viewController as! PopupDialogDefaultViewController
-//
-//            // Set dialog properties
-//
-//            vc.titleText = "..."
-//            vc.messageText = "..."
-//            vc.buttonAlignment = .horizontal
-//            vc.transitionStyle = .bounceUp
-//startLoginDialog
+            LoginService.callLoginDialog(from: window?.rootViewController, completion: {user in })
         }
-
-
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
