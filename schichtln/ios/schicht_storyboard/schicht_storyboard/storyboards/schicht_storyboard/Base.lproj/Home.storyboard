@@ -311,9 +311,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9MC-UU-so9">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="colorPrimaryDark"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="colorAccent"/>
+                            <color key="textColor" name="colorPrimaryDark"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -327,14 +326,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="for_trade" width="16" height="16"/>
+        <image name="for_trade" width="64" height="64"/>
         <image name="for_trade_with_offer" width="16" height="16"/>
         <image name="green_dot" width="16" height="16"/>
         <image name="ic_home_36pt" width="36" height="36"/>
         <image name="yellow_dot" width="16" height="16"/>
-        <namedColor name="colorAccent">
-            <color red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="colorPrimaryDark">
             <color red="0.37599998712539673" green="0.0" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

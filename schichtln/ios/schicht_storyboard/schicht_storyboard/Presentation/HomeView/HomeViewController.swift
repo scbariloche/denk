@@ -25,9 +25,9 @@ popup.addButton(btn_yep)
 
 
     var tabs: [ViewPagerTab] = [
-        ViewPagerTab(title: "Kalender", image: nil),
-        ViewPagerTab(title: "meine Schichten", image: UIImage(named: "offered")),
-        ViewPagerTab(title: "Tauschbörse", image: UIImage(named: "for_trade"))
+        ViewPagerTab(title: "Kalender", image: UIImage(named: "calendar")),
+        ViewPagerTab(title: "meine Schichten", image: UIImage(named: "personal")),
+        ViewPagerTab(title: "Tauschbörse", image: UIImage(named: "trade"))
     ]
 
     var viewPager:ViewPagerController!
@@ -40,13 +40,15 @@ popup.addButton(btn_yep)
 
 
         options = ViewPagerOptions(viewPagerWithFrame: self.view.bounds)
-        options.tabType = ViewPagerTabType.image
+        options.tabType = ViewPagerTabType.imageWithText
         options.tabViewImageSize = CGSize(width: 20, height: 20)
         options.tabViewTextFont = UIFont.systemFont(ofSize: 16)
         options.tabViewPaddingLeft = 20
         options.tabViewPaddingRight = 20
         options.isTabHighlightAvailable = false
         options.tabIndicatorViewBackgroundColor = UIColor(named: "colorAccent")!
+        options.tabViewBackgroundDefaultColor = UIColor(named: "colorPrimaryDark")!
+        options.tabViewTextDefaultColor = UIColor(named: "colorPrimary")!
         options.isEachTabEvenlyDistributed = true
         options.fitAllTabsInView = true
 

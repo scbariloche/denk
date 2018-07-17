@@ -9,14 +9,21 @@
 import UIKit
 
 import ViewPager_Swift
+import PopupDialog
 
 class PlanViewController: UIViewController {
 
     @IBAction func btn_login_action(_ sender: Any) {
-   StoredValues.user=nil
-        LoginService.callLoginDialog(from: self, completion: {user in })
+        let popup = PopupDialog(title: "really?", message: "really, really?")
+        let btn_yep = DefaultButton(title: "yep", dismissOnTap: false){
+            popup.dismiss( {StoredValues.user=nil
+                LoginService.callLoginDialog(from: self, completion: {user in })})
 
+        }
+        popup.addButton(btn_yep)
+        self.present(popup,animated: true , completion: nil)
     }
+
 
     var positions:[Group] = []
     var tabs: [ViewPagerTab] = [ViewPagerTab(title: "", image: nil)
@@ -34,12 +41,15 @@ class PlanViewController: UIViewController {
         
         
         options = ViewPagerOptions(viewPagerWithFrame: self.view.bounds)
-        options.tabType = ViewPagerTabType.basic
+        options.tabType = ViewPagerTabType.imageWithText
         options.tabViewImageSize = CGSize(width: 20, height: 20)
         options.tabViewTextFont = UIFont.systemFont(ofSize: 16)
         options.tabViewPaddingLeft = 20
         options.tabViewPaddingRight = 20
-        options.isTabHighlightAvailable = true
+        options.isTabHighlightAvailable = false
+        options.tabIndicatorViewBackgroundColor = UIColor(named: "colorAccent")!
+        options.tabViewBackgroundDefaultColor = UIColor(named: "colorPrimaryDark")!
+        options.tabViewTextDefaultColor = UIColor(named: "colorPrimary")!
         options.isEachTabEvenlyDistributed = true
         options.fitAllTabsInView = true
         
@@ -96,7 +106,7 @@ extension PlanViewController: ViewPagerControllerDelegate {
             self.tabs.removeAll()
             self.positions=positions
             for p in positions{
-                self.tabs.append(ViewPagerTab(title: p.name, image: nil))
+                self.tabs.append(ViewPagerTab(title: p.name, image: UIImage(named: p.name)))
 
             }
             self.viewPager = ViewPagerController()
