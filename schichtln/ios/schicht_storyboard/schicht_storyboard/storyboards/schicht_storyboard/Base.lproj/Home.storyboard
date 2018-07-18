@@ -47,6 +47,32 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="TVm-M1-GGR"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" name="colorPrimaryDark"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                        <color key="value" name="colorAccent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                        <color key="value" name="colorPrimary"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                        <color key="value" name="colorPrimaryDark"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
+                                        <color key="value" name="colorPrimaryDark"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventSelectionColor">
+                                        <color key="value" name="colorPrimaryDark"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
+                                        <color key="value" name="colorAccent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="ea2-tL-OUU" id="sEG-GP-Qms"/>
                                     <outlet property="delegate" destination="ea2-tL-OUU" id="IqH-va-LKH"/>
@@ -96,7 +122,7 @@
                                                 <constraint firstItem="SOM-NP-LjX" firstAttribute="leading" secondItem="OVf-iH-OlS" secondAttribute="leadingMargin" id="ttA-S7-ZN5"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="colorPrimary"/>
                                         <connections>
                                             <outlet property="img_acc" destination="NgI-5s-zja" id="d4D-wh-fNT"/>
                                             <outlet property="lbl_name" destination="SOM-NP-LjX" id="Rdd-ei-90F"/>
@@ -160,15 +186,15 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="open" translatesAutoresizingMaskIntoConstraints="NO" id="xxR-vO-uzc">
-                                            <rect key="frame" x="343" y="16" width="24" height="24"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="open" translatesAutoresizingMaskIntoConstraints="NO" id="xxR-vO-uzc">
+                                            <rect key="frame" x="343" y="11" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="24" id="NIX-D0-yy1"/>
                                                 <constraint firstAttribute="height" constant="24" id="fi4-et-nX9"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_dot" translatesAutoresizingMaskIntoConstraints="NO" id="HPt-px-Wn6">
-                                            <rect key="frame" x="311" y="18" width="24" height="24"/>
+                                            <rect key="frame" x="311" y="11" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="5bB-hm-Fiz"/>
                                                 <constraint firstAttribute="width" constant="24" id="w7N-mw-dga"/>
@@ -183,10 +209,11 @@
                                         <constraint firstItem="xxR-vO-uzc" firstAttribute="leading" secondItem="HPt-px-Wn6" secondAttribute="trailing" constant="8" id="ad4-aG-uDx"/>
                                         <constraint firstItem="tkI-dc-1n3" firstAttribute="top" secondItem="WRe-3o-6fj" secondAttribute="top" constant="-8" id="eEV-75-IEK"/>
                                         <constraint firstItem="WRe-3o-6fj" firstAttribute="leading" secondItem="1uS-rJ-gKB" secondAttribute="leadingMargin" constant="80" id="hvx-Kc-rF3"/>
+                                        <constraint firstItem="HPt-px-Wn6" firstAttribute="bottom" secondItem="xxR-vO-uzc" secondAttribute="bottom" id="k7l-Os-DiU"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="WRe-3o-6fj" secondAttribute="bottom" constant="8" id="kCf-Df-Oq5"/>
-                                        <constraint firstItem="xxR-vO-uzc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1uS-rJ-gKB" secondAttribute="top" constant="8" id="n1S-Bn-0dp"/>
+                                        <constraint firstItem="xxR-vO-uzc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HPt-px-Wn6" secondAttribute="top" constant="-3" id="n1S-Bn-0dp"/>
                                         <constraint firstItem="WRe-3o-6fj" firstAttribute="bottom" secondItem="tkI-dc-1n3" secondAttribute="bottom" constant="-6.5" id="pqX-B4-Q4M"/>
-                                        <constraint firstItem="HPt-px-Wn6" firstAttribute="top" secondItem="1uS-rJ-gKB" secondAttribute="topMargin" constant="8" id="zsm-bL-8Yw"/>
+                                        <constraint firstItem="HPt-px-Wn6" firstAttribute="top" secondItem="1uS-rJ-gKB" secondAttribute="topMargin" id="zsm-bL-8Yw"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="colorPrimary"/>
@@ -328,11 +355,35 @@
         <image name="green_dot" width="64" height="64"/>
         <image name="ic_home_36pt" width="36" height="36"/>
         <image name="open" width="18" height="18"/>
+        <namedColor name="colorAccent">
+            <color red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="colorAccent">
+            <color red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="colorPrimary">
+            <color red="0.81999999284744263" green="0.81599998474121094" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="colorPrimary">
+            <color red="0.81999999280000002" green="0.81599998470000001" blue="0.81599998470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="colorPrimary">
             <color red="0.81999999284744263" green="0.81599998474121094" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="colorPrimaryDark">
             <color red="0.37599998712539673" green="0.0" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="colorPrimaryDark">
+            <color red="0.37599998709999999" green="0.0" blue="0.0040000001900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="colorPrimaryDark">
+            <color red="0.37599998709999999" green="0.0" blue="0.0040000001900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="colorPrimaryDark">
+            <color red="0.37599998709999999" green="0.0" blue="0.0040000001900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="colorPrimaryDark">
+            <color red="0.37599998709999999" green="0.0" blue="0.0040000001900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

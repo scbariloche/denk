@@ -13,16 +13,55 @@ import FSCalendar
 
 
 class CalendarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FSCalendarDataSource, FSCalendarDelegate, UIGestureRecognizerDelegate  {
-    var schichts:[Schicht] = []
+    var daily_schichts:[Schicht] = []
+    var user_schichts:[Date] = []
     @IBOutlet weak var calendarView: FSCalendar!
 
     @IBOutlet weak var calendarTableView: UITableView!
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
-    fileprivate lazy var dateFormatter: DateFormatter = {
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if let user = StoredValues.user {
+            init_view(for: user)
+        }else{
+            LoginService.callLoginDialog(from: self, completion:{user in self.init_view(for: user)} )
+        }
+
+
+    }
+
+    fileprivate func init_view(for user: User){
+        calendarTableView.tableFooterView = UIView()
+        self.calendarView.addGestureRecognizer(self.scopeGesture)
+        calendarView.scope = .month
+
+        get_all_schichten_by_user(user: user,
+                                  on_success: {
+                                    schichts in
+                                    self.user_schichts.removeAll()
+                                    for schicht in schichts{
+                                        self.user_schichts.append(schicht.day)
+                                    }
+                                    self.calendarView.reloadData()
+        }) {
+            (error) in
+            print(error)
+        }
+        get_all_schicht_by_day(date: Date(timeIntervalSinceNow: 0), on_success: {
+            schichts in self.daily_schichts = schichts
+            self.calendarTableView.reloadData()
+        }, on_error: {error in print(error)})
+    }
+
+    fileprivate var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         return formatter
     }()
+
     fileprivate lazy var scopeGesture: UIPanGestureRecognizer = {
         [unowned self] in
         let panGesture = UIPanGestureRecognizer(target: self.calendarView, action: #selector(self.calendarView.handleScopeGesture(_:)))
@@ -31,15 +70,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         panGesture.maximumNumberOfTouches = 2
         return panGesture
         }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        calendarTableView.tableFooterView = UIView()
-        self.calendarView.addGestureRecognizer(self.scopeGesture)
-        get_all_schicht_by_day(date: Date(timeIntervalSinceNow: 0), on_success: {schichts in self.schichts = schichts
-            self.calendarTableView.reloadData()}, on_error: {error in print(error)})
-        calendarView.scope = .week
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,11 +81,14 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         self.calendarHeightConstraint.constant = bounds.height
         self.view.layoutIfNeeded()
     }
+    func calendar(_ calendar: FSCalendar, hasEventFor date: Date) -> Bool {
+        return user_schichts.contains(date)
+    }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         get_all_schicht_by_day(date: date, on_success: {
             schichts in
-            self.schichts = schichts
+            self.daily_schichts = schichts
             self.calendarTableView.reloadData()}, on_error: {it in print(it)})
 
         print("did select date \(self.dateFormatter.string(from: date))")
@@ -79,12 +112,12 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return schichts.count
+        return daily_schichts.count
     }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let schicht = schichts[indexPath.row]
+         let schicht = daily_schichts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "calendarViewCell", for: indexPath) as! CalendarViewCell
         cell.lbl_name.text = schicht.user.username
         cell.lbl_type.text = schicht.type.description

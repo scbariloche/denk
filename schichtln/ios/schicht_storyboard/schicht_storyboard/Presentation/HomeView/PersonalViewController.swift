@@ -22,7 +22,8 @@ class PersonalViewCell:UITableViewCell{
 class PersonalViewController: UITableViewController {
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "EE. dd.MM.yy"
+        formatter.dateFormat = "EE dd.MM.yy"
+        formatter.locale = Locale(identifier: "de_DE")
         return formatter
     }()
 
@@ -66,8 +67,6 @@ class PersonalViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-
-
     override  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedSchicht = schichts[indexPath.row]
 
@@ -75,21 +74,10 @@ class PersonalViewController: UITableViewController {
         case .accepted:
             let popup = SelectionDialog(title: "was willst du tun?", closeButtonTitle: "close")
             //            "offen anbieten", "jemanden anbieten", "zum Tausch anbieten"
-            popup.addItem(item: "offen anbieten", didTapHandler: {
-                update_schicht(oldschicht: selectedSchicht,
-                               newschicht: Schicht2Change(schicht: selectedSchicht, state: .open),
-                               on_success: {
-                                self.init_view(for: StoredValues.user!)
-                                sendMessage(to: "position\(selectedSchicht.type.id)", body: "nimm!")
-                                popup.close()
-                },
-                               on_error: {
-                                error in print(error)}
-                )
-            }
-            )
+            popup.addItem(getOpenOptionItem(selectedSchicht, popup, tableView))
+            popup.addItem(getOfferOptionItem(selectedSchicht, popup, tableView))
+            popup.addItem(getTradeOptionItem(selectedSchicht, popup, tableView))
             popup.show()
-            print("ok")
         case .pending:
             handlePending(selectedSchicht)
         case .deleted:
@@ -97,7 +85,6 @@ class PersonalViewController: UITableViewController {
         }
 
     }
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -120,7 +107,85 @@ class PersonalViewController: UITableViewController {
         return cell
     }
 
-    fileprivate func handlePending(_ selectedSchicht: Schicht) {
+    // MARK: SelectionOptions
+
+    fileprivate func getOpenOptionItem(_ selectedSchicht: Schicht, _ popup: SelectionDialog, _ tableView: UITableView) -> SelectionDialogItem {
+        return SelectionDialogItem(item: "offen anbieten", didTapHandler: {
+            update_schicht(oldschicht: selectedSchicht,
+                           newschicht: Schicht2Change(schicht: selectedSchicht, state: .open),
+                           on_success: {
+                            self.init_view(for: StoredValues.user!)
+                            sendMessage(to: "position\(selectedSchicht.position.id)",title: "\(selectedSchicht.type.description) zu vergeben", body: "\(selectedSchicht.type.description) am \(self.dateFormatter.string(from: selectedSchicht.day))")
+                            popup.close()
+                            tableView.reloadData()
+            },
+                           on_error: {
+                            error in print(error)
+                            popup.close()
+
+                            tableView.reloadData()
+            }
+            )
+        }
+        )
+    }
+    fileprivate func getOfferOptionItem(_ selectedSchicht: Schicht, _ popup: SelectionDialog, _ tableView: UITableView) -> SelectionDialogItem {
+        return SelectionDialogItem(item:"jemandem anbieten", didTapHandler:{
+            get_user_by_position(position: selectedSchicht.position, on_success: { (user) in
+                let user_selection_popup = SelectionDialog(title: "an wen?", closeButtonTitle: "close")
+                for new_user in user{
+                    user_selection_popup.addItem(item: new_user.username, didTapHandler: {
+                        update_schicht(oldschicht: selectedSchicht,
+                                       newschicht: Schicht2Change(schicht: selectedSchicht, offered_to_id:new_user.id, state: .offered),
+                                       on_success: {
+                                        self.init_view(for: StoredValues.user!)
+                                        sendMessage(to: "\(new_user.id)", body: "willst du \(selectedSchicht.type.description) am \(self.dateFormatter.string(from: selectedSchicht.day))?")
+                                        user_selection_popup.close()
+                                        popup.close()
+
+                                        tableView.reloadData()
+                        },
+                                       on_error: {
+                                        error in print(error)
+                                        tableView.reloadData()
+                                        popup.close()
+
+
+                                        user_selection_popup.close()
+                        }
+                        )
+
+                    })
+                }
+                user_selection_popup.show()
+            }, on_error: {
+                error in print(error)
+                popup.close()
+})
+        })
+    }
+    fileprivate func getTradeOptionItem(_ selectedSchicht: Schicht, _ popup: SelectionDialog, _ tableView: UITableView) -> SelectionDialogItem {
+        return SelectionDialogItem(item: "zum Tausch anbieten", didTapHandler: {
+            update_schicht(oldschicht: selectedSchicht,
+                           newschicht: Schicht2Change(schicht: selectedSchicht, state: .for_trade),
+                           on_success: {
+                            self.init_view(for: StoredValues.user!)
+                            sendMessage(to: "position\(selectedSchicht.position.id)", title: "\(selectedSchicht.type.description) zum tauschen", body: "\(selectedSchicht.type.description) am \(self.dateFormatter.string(from: selectedSchicht.day))")
+                            popup.close()
+                            tableView.reloadData()
+            },
+                           on_error: {
+                            error in print(error)
+                            popup.close()
+
+                            tableView.reloadData()
+            }
+            )
+        }
+        )
+    }
+
+fileprivate func handlePending(_ selectedSchicht: Schicht) {
         let popup = PopupDialog(title: "diese Schicht wurde geändert", message: "", image: nil, buttonAlignment: .horizontal, transitionStyle: .zoomIn , preferredWidth: CGFloat(80), gestureDismissal: true, hideStatusBar: true, completion:  nil)
         let okBtn = DefaultButton(title: "OK", dismissOnTap:true){
             update_schicht(oldschicht: selectedSchicht, newschicht: Schicht2Change(schicht:selectedSchicht,accept_id:1), on_success: {

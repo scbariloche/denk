@@ -59,7 +59,8 @@ class TradeViewController: UITableViewController {
     }
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "EE. dd.MM.yy"
+        formatter.dateFormat = "EE dd.MM.yy"
+        formatter.locale = Locale(identifier: "de_DE")
         return formatter
     }()
 
