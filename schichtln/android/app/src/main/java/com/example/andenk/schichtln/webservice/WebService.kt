@@ -22,8 +22,6 @@ import java.util.*
  */
 
 
-
-
 // emulator loopback to host
 //val ip = "10.0.2.2:8000"
 
@@ -125,13 +123,30 @@ fun get_all_schichten_for_trade(user_from: User, user_for: User, on_success: (Mu
         if (result.component2() == null) {
             val json_array = (result.component1() as Json).array()
 
-            val schichten_ret: MutableList<Any> = mutableListOf()
+            var schichten_ret_original: MutableList<Schicht> = mutableListOf()
             var i = 0
             while (i < json_array.length()) {
-                schichten_ret.add(gson.fromJson(json_array.get(i).toString(), Schicht::class.java))
+                schichten_ret_original.add(gson.fromJson(json_array.get(i).toString(), Schicht::class.java))
                 i++
             }
-            on_success(schichten_ret)
+            get_open_schicht_by_user(user_from, on_success = {
+                for (open_s in it) {
+                    for (to_offer in schichten_ret_original) {
+                        if ((open_s as Schicht).trade_for_id == (to_offer).id) {
+                            schichten_ret_original.remove(to_offer)
+                        }
+                    }
+                    print("")
+
+                }
+                print("")
+
+
+                on_success(schichten_ret_original as MutableList<Any>)
+            }, on_error = {
+                on_error(result.component2()!!)
+            })
+
         } else {
             on_error(result.component2()!!)
         }
@@ -205,7 +220,7 @@ fun get_schicht_by_id(id: Long, on_success: (schicht: Schicht) -> Unit, on_error
     }
 }
 
-fun update_schicht(oldschicht: Schicht, newschicht: Schicht2Change, on_success: () -> Unit, on_error: (errorString:String) -> Unit) {
+fun update_schicht(oldschicht: Schicht, newschicht: Schicht2Change, on_success: () -> Unit, on_error: (errorString: String) -> Unit) {
 
     get_schicht_by_id(newschicht.id, {
         if (it.is_same_as(oldschicht)) {
@@ -269,8 +284,6 @@ fun get_positions_by_user(user: User, on_success: (MutableList<Group>) -> Unit, 
     }
 
 }
-
-
 
 
 fun get_user_by_position(context: Context, position: Group, foo: (JSONArray) -> Unit) {

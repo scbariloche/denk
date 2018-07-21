@@ -326,11 +326,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "schicht_storyboard/DataAccess/Webservice.swift"
-            timestampString = "553508339.77544"
+            timestampString = "553635815.2638561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "138"
@@ -342,11 +342,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "schicht_storyboard/DataAccess/Webservice.swift"
-            timestampString = "553508339.775831"
+            timestampString = "553635815.264172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
@@ -358,11 +358,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "schicht_storyboard/DataAccess/Webservice.swift"
-            timestampString = "553508339.775905"
+            timestampString = "553635815.264226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
@@ -374,11 +374,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "schicht_storyboard/DataAccess/Webservice.swift"
-            timestampString = "553508339.775966"
+            timestampString = "553635815.2642699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
@@ -387,14 +387,14 @@
             landmarkType = "9">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (schicht_storyboard.Schicht) -&gt; () in schicht_storyboard.update_schicht(oldschicht: schicht_storyboard.Schicht, newschicht: schicht_storyboard.Schicht2Change, on_success: () -&gt; (), on_error: (schicht_storyboard.WebserviceError) -&gt; ()) -&gt; ()"
                   moduleName = "schicht_storyboard"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schicht_storyboard/schicht_storyboard/DataAccess/Webservice.swift"
-                  timestampString = "553619235.9797339"
+                  timestampString = "553634857.982064"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "149"
@@ -402,14 +402,14 @@
                   offsetFromSymbolStart = "1648">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in closure #1 (schicht_storyboard.Schicht) -&gt; () in schicht_storyboard.update_schicht(oldschicht: schicht_storyboard.Schicht, newschicht: schicht_storyboard.Schicht2Change, on_success: () -&gt; (), on_error: (schicht_storyboard.WebserviceError) -&gt; ()) -&gt; ()"
                   moduleName = "schicht_storyboard"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andreasd/Documents/GitHub_scbariloche/denk/schichtln/ios/schicht_storyboard/schicht_storyboard/DataAccess/Webservice.swift"
-                  timestampString = "553619235.981552"
+                  timestampString = "553634857.983942"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "150"
@@ -426,7 +426,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "schicht_storyboard/Presentation/HomeView/CalendarViewController.swift"
-            timestampString = "553624482.394209"
+            timestampString = "553635815.264316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -438,16 +438,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "schicht_storyboard/Presentation/HomeView/CalendarViewController.swift"
-            timestampString = "553624482.394372"
+            timestampString = "553635815.264546"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
             endingLineNumber = "85"
             landmarkName = "calendar(_:hasEventFor:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "schicht_storyboard/Presentation/HomeView/TradeViewController.swift"
+            timestampString = "553635815.264607"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

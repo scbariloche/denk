@@ -43,8 +43,7 @@ class PersonalFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
 
         convertview = inflater!!.inflate(R.layout.fragment_personal_open, container, false)
@@ -70,7 +69,7 @@ class PersonalFragment : Fragment() {
                 convertview!!.list_personal_open.layoutManager = LinearLayoutManager(activity)
                 if (activity != null) {
                     convertview!!.list_personal_open.adapter = PersonalListAdapter(
-                            context = activity,
+                            context = activity!!,
                             objects = it as List<Schicht>,
                             offer = { offer(it) },
                             set_accepted = { setSchichtAccepted(it) },
@@ -89,7 +88,7 @@ class PersonalFragment : Fragment() {
 
             })
         } else {
-            activity.openLoginDialog(RESULTCODE_LOGIN)
+            activity!!.openLoginDialog(RESULTCODE_LOGIN)
         }
 
     }
@@ -97,7 +96,7 @@ class PersonalFragment : Fragment() {
 
     private fun offer(item: Schicht) {
         var userList = ArrayList<Any>()
-        get_user_by_position(activity, item.position, {
+        get_user_by_position(activity!!, item.position, {
 
             var i = 0
             var jsonArray: JSONArray = it as JSONArray
@@ -108,13 +107,13 @@ class PersonalFragment : Fragment() {
                 i++
             }
 
-            createAlert(activity,
+            createAlert(activity!!,
                     "",
                     userList,
                     DialogInterface.OnClickListener(
                             { dialogInterface: DialogInterface,
                               i_alert_list: Int ->
-                                createAlert(activity,
+                                createAlert(activity!!,
                                         "Die Schicht bleibt solange unter deiner" +
                                                 " Verantwortung bis ${(userList.get(i_alert_list) as User).username} diese " +
                                                 "Schicht annimmt.",

@@ -33,13 +33,12 @@ class Plan_PlanFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
 
         val view: View = inflater!!.inflate(R.layout.fragment_position_list, container, false)
         schichtListView = view.list_position_schicht
-        position = arguments.getSerializable("position") as Group
+        position = arguments!!.getSerializable("position") as Group
         swipeContainer = view.position_swipe_container
 
 
@@ -63,7 +62,7 @@ class Plan_PlanFragment : Fragment() {
 
 
                         schichtListView?.layoutManager = LinearLayoutManager(activity)
-                        schichtListView?.adapter = PositionListAdapter(activity, it as List<Schicht>)
+                        schichtListView?.adapter = PositionListAdapter(activity!!, it as List<Schicht>)
                     }
                     swipeContainer!!.isRefreshing = false
                 }, {

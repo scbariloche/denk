@@ -27,6 +27,10 @@ import com.example.andenk.schichtln.webservice.get_all_schicht_by_day
 import com.example.andenk.schichtln.webservice.get_all_types_
 import com.example.andenk.schichtln.webservice.get_user_by_position
 import com.google.gson.Gson
+import com.prolificinteractive.materialcalendarview.CalendarDay
+import com.prolificinteractive.materialcalendarview.CalendarMode
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView
+import com.prolificinteractive.materialcalendarview.OnDateSelectedListener
 import kotlinx.android.synthetic.main.fragment_calendar.*
 import kotlinx.android.synthetic.main.fragment_calendar.view.*
 import org.jetbrains.anko.longToast
@@ -64,26 +68,25 @@ class CalendarFragment : Fragment() {
     }
 
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
 
 
         ret = inflater!!.inflate(R.layout.fragment_calendar, container, false)
-
-        ret!!.calendarView.setOnDateChangeListener(MOnDateChangeListener())
+val calendar_view = (ret!!.calendarView as MaterialCalendarView)
+        calendar_view.setOnDateChangedListener(MOnDateChangeListener())
 
         ret!!.toggle_list_up_down.setOnClickListener(ToggleUpDownListener())
         cal = Calendar.getInstance()
-        ret!!.calendarView.date = cal.timeInMillis
+        calendar_view.setDateSelected( Date(cal.timeInMillis), true)
 
-        if (DBHelper(activity).getCurrentUser() != null) {
+        if (DBHelper(activity!!).getCurrentUser() != null) {
 
-            if (!DBHelper(activity).getCurrentUser()!!.is_superuser) {
+            if (!DBHelper(activity!!).getCurrentUser()!!.is_superuser) {
                 ret!!.btn_add_schicht.visibility = GONE
             }
         } else {
-            activity.startActivityForResult(Intent(activity, LoginDialog().javaClass), RESULTCODE_LOGIN)
+            activity!!.startActivityForResult(Intent(activity, LoginDialog().javaClass), RESULTCODE_LOGIN)
         }
         ret!!.btn_add_schicht.setOnClickListener(View.OnClickListener {
 
@@ -93,7 +96,7 @@ class CalendarFragment : Fragment() {
 
         ret!!.btn_today.onClick {
             cal.time = Date(System.currentTimeMillis())
-            calendarView.setDate(System.currentTimeMillis(), true, true)
+            calendar_view.setDateSelected( Date(System.currentTimeMillis()), true)
             updateList()
 
         }
@@ -118,7 +121,7 @@ class CalendarFragment : Fragment() {
 
             schicht.day = cal.time
             createAlert(
-                    activity,
+                    activity!!,
                     cal.time.format("dd.MM."),
                     types,
                     DialogInterface.OnClickListener(
@@ -128,7 +131,7 @@ class CalendarFragment : Fragment() {
                                 val users: ArrayList<Any> = ArrayList()
                                 val type = types.get(i_types) as Type
 
-                                get_user_by_position(activity, type.position, {
+                                get_user_by_position(activity!!, type.position, {
                                     onUsersArrived(it, users, types, i_types, schicht, type)
                                 })
 
@@ -157,7 +160,7 @@ class CalendarFragment : Fragment() {
 
 
         createAlert(
-                activity,
+                activity!!,
                 "${(types.get(i_types) as Type).description} am ${cal.time.format("dd.MM.")}",
                 nameslist,
                 DialogInterface.OnClickListener(
@@ -167,13 +170,13 @@ class CalendarFragment : Fragment() {
                                 create_schicht(
                                         Schicht2Change(
                                                 schicht = schicht,
-                                                user_id = DBHelper(activity).getCurrentUser()!!.id,
+                                                user_id = DBHelper(activity!!).getCurrentUser()!!.id,
                                                 position_id = type.position.id,
                                                 accept_id = 2,
                                                 state = "open"
                                         ),
                                         on_success = {
-                                            activity.longToast("alle ${type.position.name} werden benachrichtigt")
+                                            activity!!.longToast("alle ${type.position.name} werden benachrichtigt")
                                             sendMessage(
                                                     to = "position${type.position.id}",
                                                     title = "${type.description} zu vergeben",
@@ -190,7 +193,7 @@ class CalendarFragment : Fragment() {
                                 val user = users[i_users-1] as User
                                 schicht.user = user
                                 createAlert(
-                                        activity,
+                                        activity!!,
                                         "${type.description} am ${cal.time.format("dd.MM.yy")} an ${user.username} vergeben?",
                                         DialogInterface.OnClickListener(
                                                 { _: DialogInterface,
@@ -234,7 +237,7 @@ class CalendarFragment : Fragment() {
         get_all_schicht_by_day(date = cal.time, on_success = {
             if (activity != null) {
                 ret!!.listview_details.layoutManager = LinearLayoutManager(activity)
-                ret!!.listview_details.adapter = DetailListAdapter(activity, it as List<Schicht>, { updateList() })
+                ret!!.listview_details.adapter = DetailListAdapter(activity!!, it as List<Schicht>, { updateList() })
 
             }
             ret!!.calendar_swipe.isRefreshing = false
@@ -246,21 +249,12 @@ class CalendarFragment : Fragment() {
 
     }
 
-    inner class MOnDateChangeListener : CalendarView.OnDateChangeListener {
-        /**
-         * Called upon change of the selected day.
-         *
-         * @param view The view associated with this listener.
-         * @param year The year that was set.
-         * @param month The month that was set [0-11].
-         * @param dayOfMonth The day of the month that was set.
-         */
-        override fun onSelectedDayChange(view: CalendarView?, year: Int, month: Int, dayOfMonth: Int) {
+    inner class MOnDateChangeListener : OnDateSelectedListener {
+        override fun onDateSelected(p0: MaterialCalendarView, p1: CalendarDay, p2: Boolean) {
 
-            cal.set(year, month, dayOfMonth)
+            cal.set(p1.year, p1.month, p1.day)
 
             updateList()
-
         }
     }
 
@@ -272,11 +266,11 @@ class CalendarFragment : Fragment() {
          * @param v The view that was clicked.
          */
         override fun onClick(v: View?) {
-            if (ret!!.calendarView.visibility == View.GONE) {
-                ret!!.calendarView.visibility = View.VISIBLE
+            if ((ret!!.calendarView as MaterialCalendarView).calendarMode == CalendarMode.MONTHS) {
+                (ret!!.calendarView as MaterialCalendarView).state().edit().setCalendarDisplayMode(CalendarMode.WEEKS).commit()
             } else {
-                ret!!.calendarView.visibility = View.GONE
-            }
+
+                (ret!!.calendarView as MaterialCalendarView).state().edit().setCalendarDisplayMode(CalendarMode.MONTHS).commit() }
 
 
         }

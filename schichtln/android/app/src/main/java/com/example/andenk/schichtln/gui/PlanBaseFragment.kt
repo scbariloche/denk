@@ -21,8 +21,7 @@ import kotlinx.android.synthetic.main.fragment_plan_base.view.*
 class PlanBaseFragment : Fragment() {
 
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater!!.inflate(R.layout.fragment_plan_base, container, false)
 
@@ -34,9 +33,9 @@ class PlanBaseFragment : Fragment() {
 
     private fun setupViewPager(view: View) {
 
-        get_positions_by_user(user = DBHelper(activity).getCurrentUser()!!, on_success = {
+        get_positions_by_user(user = DBHelper(activity!!).getCurrentUser()!!, on_success = {
             if (activity != null) {
-                val adapter = TabsViewPagerAdapter(activity.supportFragmentManager)
+                val adapter = TabsViewPagerAdapter(activity!!.supportFragmentManager)
                 var index=0
                 for (i in it) {
                     FirebaseMessaging.getInstance().subscribeToTopic("position${i.id}")
@@ -46,7 +45,7 @@ class PlanBaseFragment : Fragment() {
                     fragment.arguments = args
                     adapter.addFragment(fragment, "${i.name}")
                     try {
-                        view.tabs.getTabAt(index)!!.icon=activity.getDrawableByName("${i.name}")
+                        view.tabs.getTabAt(index)!!.icon=activity!!.getDrawableByName("${i.name}")
                     }catch (e:Exception){
                         print(e.localizedMessage)
                     }
@@ -56,7 +55,7 @@ class PlanBaseFragment : Fragment() {
 
                 view.viewpager.adapter = null
                 view.viewpager.adapter = adapter
-                view.viewpager.adapter.notifyDataSetChanged()
+                (view.viewpager.adapter as TabsViewPagerAdapter).notifyDataSetChanged()
             }
         }, on_error = {
             println(it.message)

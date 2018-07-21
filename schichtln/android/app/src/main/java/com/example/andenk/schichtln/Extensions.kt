@@ -83,10 +83,14 @@ fun Schicht.is_same_as(schicht: Schicht): Boolean {
             this.offered_to == schicht.offered_to &&
             this.state == schicht.state &&
             this.type == schicht.type &&
-            this.position == schicht.position
+            this.position == schicht.position &&
+            this.trade_for_id == schicht.trade_for_id &&
+            this.user == schicht.user &&
+            this.note == schicht.note
             )
 }
-fun Date.format(pattern:String="dd.MM."):String{
-    val sdf= SimpleDateFormat(pattern)
+
+fun Date.format(pattern: String = "dd.MM."): String {
+    val sdf = SimpleDateFormat(pattern)
     return sdf.format(this)
 }

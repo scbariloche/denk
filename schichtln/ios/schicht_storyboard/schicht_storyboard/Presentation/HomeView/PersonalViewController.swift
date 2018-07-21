@@ -142,15 +142,12 @@ class PersonalViewController: UITableViewController {
                                         sendMessage(to: "\(new_user.id)", body: "willst du \(selectedSchicht.type.description) am \(self.dateFormatter.string(from: selectedSchicht.day))?")
                                         user_selection_popup.close()
                                         popup.close()
-
                                         tableView.reloadData()
                         },
                                        on_error: {
                                         error in print(error)
                                         tableView.reloadData()
                                         popup.close()
-
-
                                         user_selection_popup.close()
                         }
                         )

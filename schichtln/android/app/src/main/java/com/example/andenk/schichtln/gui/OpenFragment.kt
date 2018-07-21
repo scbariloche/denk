@@ -43,8 +43,7 @@ class OpenFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
 
         convertview = inflater!!.inflate(R.layout.fragment_personal_open, container, false)
@@ -72,14 +71,14 @@ class OpenFragment : Fragment() {
         convertview!!.swipe_container.isRefreshing = true
 
         var list: ArrayList<Schicht> = ArrayList()
-        if (DBHelper(activity).getCurrentUser() != null) {
-            get_open_schicht_by_user(DBHelper(activity).getCurrentUser()!!, on_success = {
+        if (DBHelper(activity!!).getCurrentUser() != null) {
+            get_open_schicht_by_user(DBHelper(activity!!).getCurrentUser()!!, on_success = {
 
                 if (activity != null) {
 
                     convertview!!.list_personal_open.layoutManager = LinearLayoutManager(activity)
                     convertview!!.list_personal_open.adapter = OpenListAdapter(
-                            context = activity,
+                            context = activity!!,
                             objects = it as List<Schicht>,
                             set_taken = {
                                 setSchichtTaken(it)
@@ -107,13 +106,13 @@ class OpenFragment : Fragment() {
             })
 
         } else {
-            activity.startActivityForResult(Intent(activity, LoginDialog().javaClass), RESULTCODE_LOGIN)
+            activity!!.startActivityForResult(Intent(activity, LoginDialog().javaClass), RESULTCODE_LOGIN)
         }
     }
 
 
     private fun offerSchichtForTrade(item: Schicht) {
-        get_all_schichten_for_trade(DBHelper(context).getCurrentUser()!!, item.user!!, on_success = {
+        get_all_schichten_for_trade(DBHelper(context!!).getCurrentUser()!!, item.user!!, on_success = {
             val schichts_for_trade = it as MutableList<Schicht>
             val trade_offer_names = mutableListOf<Any>()
             for (i in it as MutableList<Schicht>) {
@@ -122,7 +121,7 @@ class OpenFragment : Fragment() {
             }
 
             createAlert(
-                    activity,
+                    activity!!,
                     "für welche?",
                     trade_offer_names,
                     DialogInterface.OnClickListener({ _: DialogInterface, index: Int ->
@@ -154,7 +153,7 @@ class OpenFragment : Fragment() {
 
 
     private fun setSchichtTaken(item: Schicht) {
-        val db = DBHelper(activity)
+        val db = DBHelper(activity!!)
         update_schicht(item,
                 newschicht = Schicht2Change(
                         id = item.id,
@@ -174,7 +173,7 @@ class OpenFragment : Fragment() {
                     sendMessage(
                             "${item.user!!.id}",
                             "Du hast am ${item.day.format()} frei",
-                            "${DBHelper(activity).getCurrentUser()!!.username} hat '${item.type.description}' übernommen"
+                            "${DBHelper(activity!!).getCurrentUser()!!.username} hat '${item.type.description}' übernommen"
                     )
 
                 },
@@ -186,7 +185,7 @@ class OpenFragment : Fragment() {
     }
 
     private fun setSchichtDenied(item: Schicht) {
-        val db = DBHelper(activity)
+        val db = DBHelper(activity!!)
         update_schicht(item,
                 newschicht = Schicht2Change(
                         id = item.id,
@@ -206,7 +205,7 @@ class OpenFragment : Fragment() {
                     sendMessage(
                             "${item.user!!.id}",
                             "Dein Angebot wurde abgelehnt",
-                            "${DBHelper(activity).getCurrentUser()!!.username} übernimmt '${item.type.description} - ${item.day.format()}' nicht"
+                            "${DBHelper(activity!!).getCurrentUser()!!.username} übernimmt '${item.type.description} - ${item.day.format()}' nicht"
                     )
 
                 },
