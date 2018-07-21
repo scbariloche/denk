@@ -136,12 +136,7 @@ fun get_all_schichten_for_trade(user_from: User, user_for: User, on_success: (Mu
                             schichten_ret_original.remove(to_offer)
                         }
                     }
-                    print("")
-
                 }
-                print("")
-
-
                 on_success(schichten_ret_original as MutableList<Any>)
             }, on_error = {
                 on_error(result.component2()!!)
@@ -220,10 +215,10 @@ fun get_schicht_by_id(id: Long, on_success: (schicht: Schicht) -> Unit, on_error
     }
 }
 
-fun update_schicht(oldschicht: Schicht, newschicht: Schicht2Change, on_success: () -> Unit, on_error: (errorString: String) -> Unit) {
+fun update_schicht(oldschicht: Schicht, newschicht: Schicht2Change, on_success: () -> Unit, on_error: (errorString: String) -> Unit,check_if_changed:Boolean=true) {
 
     get_schicht_by_id(newschicht.id, {
-        if (it.is_same_as(oldschicht)) {
+        if (it.is_same_as(oldschicht)||!check_if_changed) {
             val request = Fuel.post("${url}changeschicht/${newschicht.id}/")
             request.headers["Content-Type"] = "application/json"
             request.body(gson.toJson(newschicht)).response { request, response, result ->

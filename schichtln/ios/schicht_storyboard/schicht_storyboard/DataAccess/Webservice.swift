@@ -93,8 +93,31 @@ func get_all_schichten_by_user(user: User, on_success: @escaping([Schicht]) -> V
 
 
 func get_all_schichten_for_trade(user_from: User, user_for: User, on_success: @escaping([Schicht]) -> Void, on_error: @escaping (WebserviceError) -> Void) {
-    get_schicht_by_url(url: "\(url)schichtenfortradebyuser/\(user_from.id)/\(user_for.id)", on_success: on_success, on_error: on_error)
+    get_schicht_by_url(url: "\(url)schichtenfortradebyuser/\(user_from.id)/\(user_for.id)",
+        on_success:{ it in
+var schichten_ret_original = it
+            get_open_schicht_by_user(user: user_from, on_success : { it in
+                for open_s in it {
+                    for (i,to_offer) in schichten_ret_original.enumerated() {
+                        if ((open_s as Schicht).trade_for_id == (to_offer).id) {
+                           schichten_ret_original.remove(at: i)
+                        }
+                    }
+                }
+                on_success(schichten_ret_original )
+            }, on_error : { error in
+                on_error(error)
+            })
+
+    }
+        ,
+        on_error: on_error)
 }
+
+
+func delete(element: Schicht, val list:Array<Schicht>) -> Array<Schicht> {
+  return list.filter() { $0.is_same_as(schicht:  element) }
+    }
 
 
 func get_all_schicht_by_position(group: Group, on_success: @escaping([Schicht]) -> Void, on_error: @escaping (WebserviceError) -> Void) {
@@ -132,10 +155,10 @@ func get_schicht_by_id(id: Int, on_success: @escaping( Schicht) -> Void, on_erro
     
 }
 
-func update_schicht(oldschicht: Schicht, newschicht: Schicht2Change, on_success: @escaping() -> Void, on_error: @escaping (WebserviceError) -> Void) {
+func update_schicht(oldschicht: Schicht, newschicht: Schicht2Change, on_success: @escaping() -> Void, on_error: @escaping (WebserviceError) -> Void, check_if_changed:Bool = true) {
     
     get_schicht_by_id(id:newschicht.id, on_success:{ it in
-        if (it.is_same_as(schicht:oldschicht)) {
+        if (it.is_same_as(schicht:oldschicht) || !check_if_changed) {
             let encoder = JSONEncoder()
             encoder.dateEncodingStrategy = .formatted(Formatter.iso8601)
             let jsonData = try! encoder.encode(newschicht)

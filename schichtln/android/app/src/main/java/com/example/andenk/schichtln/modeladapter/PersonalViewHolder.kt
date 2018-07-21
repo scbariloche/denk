@@ -87,13 +87,13 @@ class PersonalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
                                                                 context.longToast(it)
                                                                 update()
                                                             }
-                                                    )
+                                                            ,
+                                                            check_if_changed = false)
                                                 },
                                                 on_error = {
                                                     context.longToast(it)
                                                     update()
-                                                }
-                                        )
+                                                })
                                     }), noOptionString = "ablehnen",
                                     noAction = DialogInterface.OnClickListener({ _: DialogInterface, _: Int ->
                                         update_schicht(item,
