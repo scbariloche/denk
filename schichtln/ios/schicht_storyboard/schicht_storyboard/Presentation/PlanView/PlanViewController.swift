@@ -12,18 +12,25 @@ import ViewPager_Swift
 import PopupDialog
 
 class PlanViewController: UIViewController {
-
     @IBAction func btn_login_action(_ sender: Any) {
         let popup = PopupDialog(title: "really?", message: "really, really?")
         let btn_yep = DefaultButton(title: "yep", dismissOnTap: false){
-            popup.dismiss( {StoredValues.user=nil
-                LoginService.callLoginDialog(from: self, completion: {user in })})
+            popup.dismiss( {
+                StoredValues.user=nil
+                LoginService.callLoginDialog(from: self,
+                                             completion: {
+                                                user in
+                                                self.init_view(for: user)
+                })
+                }
+            )
 
         }
         popup.addButton(btn_yep)
         self.present(popup,animated: true , completion: nil)
     }
 
+    @IBOutlet weak var btn_logout: UIBarButtonItem!
 
     var positions:[Group] = []
     var tabs: [ViewPagerTab] = [ViewPagerTab(title: "", image: nil)
@@ -36,10 +43,20 @@ class PlanViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let user = StoredValues.user{
+            init_view(for: user)
+        }else{
+            LoginService.callLoginDialog(from: self) { (user) in
+                self.init_view(for: user)
+            }
+        }
+    }
+    fileprivate func init_view(for user: User) {
+        btn_logout.title = "\(user.username) ausloggen"
 
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
-        
-        
+
+
         options = ViewPagerOptions(viewPagerWithFrame: self.view.bounds)
         options.tabType = ViewPagerTabType.imageWithText
         options.tabViewImageSize = CGSize(width: 20, height: 20)
@@ -52,18 +69,30 @@ class PlanViewController: UIViewController {
         options.tabViewTextDefaultColor = UIColor(named: "colorPrimary")!
         options.isEachTabEvenlyDistributed = true
         options.fitAllTabsInView = true
-        
-        if let user = StoredValues.user{
-            init_view(for: user)
-        }else{
-            LoginService.callLoginDialog(from: self, completion: {user in self.init_view(for: user)})
-        }
-        
 
-        
-        
+
+
+        get_positions_by_user(user: user, on_success: { positions in
+            self.tabs.removeAll()
+            self.positions=positions
+            for p in positions{
+                self.tabs.append(ViewPagerTab(title: p.name, image: UIImage(named: p.name)))
+
+            }
+            self.viewPager = ViewPagerController()
+            self.viewPager.options = self.options
+            self.viewPager.dataSource = self
+            self.viewPager.delegate = self
+
+            self.addChildViewController(self.viewPager)
+            self.view.addSubview( self.viewPager.view)
+            self.viewPager.didMove(toParentViewController: self)
+            self.viewPager.invalidateTabs()
+
+        }, on_error: {error in
+
+        })
     }
-    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -91,7 +120,7 @@ extension PlanViewController: ViewPagerControllerDataSource {
     func startViewPagerAtIndex() -> Int {
         return 0
     }
-}
+   }
 
 extension PlanViewController: ViewPagerControllerDelegate {
     
@@ -101,26 +130,5 @@ extension PlanViewController: ViewPagerControllerDelegate {
     func didMoveToControllerAtIndex(index: Int) {
     }
 
-    fileprivate func init_view(for user: User) {
-        get_positions_by_user(user: user, on_success: { positions in
-            self.tabs.removeAll()
-            self.positions=positions
-            for p in positions{
-                self.tabs.append(ViewPagerTab(title: p.name, image: UIImage(named: p.name)))
 
-            }
-            self.viewPager = ViewPagerController()
-            self.viewPager.options = self.options
-            self.viewPager.dataSource = self
-            self.viewPager.delegate = self
-
-            self.addChildViewController(self.viewPager)
-            self.view.addSubview( self.viewPager.view)
-            self.viewPager.didMove(toParentViewController: self)
-            self.viewPager.invalidateTabs()
-
-        }, on_error: {error in
-
-        })
-    }
 }

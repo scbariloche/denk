@@ -26,6 +26,7 @@ import com.example.andenk.schichtln.webservice.get_user_by_position
 import com.example.andenk.schichtln.webservice.update_schicht
 import kotlinx.android.synthetic.main.fragment_personal_open.view.*
 import org.jetbrains.anko.support.v4.longToast
+import org.jetbrains.anko.support.v4.toast
 import org.json.JSONArray
 
 
@@ -189,7 +190,7 @@ class PersonalFragment : Fragment() {
                     updatePersonal()
                     sendMessage(
                             to = "position${item.position.id}",
-                            title = "${item.type.description} zu vergeben",
+                            title = "${item.type.description} zum tauschen",
                             body = "${item.type.description} am ${item.day.format()}"
                     )
                     longToast("alle ${item.position.name} werden benachrichtigt")
@@ -221,7 +222,9 @@ class PersonalFragment : Fragment() {
 
     private fun deleteSchicht(item: Schicht) {
 
-        delete_schicht(item, { updatePersonal() })
+        delete_schicht(item, { updatePersonal() },on_error = {
+            toast(it)
+        })
     }
 
 

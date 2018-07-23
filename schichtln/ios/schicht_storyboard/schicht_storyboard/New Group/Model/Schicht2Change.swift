@@ -42,6 +42,6 @@ import Foundation
         self.accept = accept_id ?? schicht.accept.id
         self.offered_to = offered_to_id ?? schicht.offered_to?.id
         self.note = note ?? schicht.note
-        self.trade_for_id = trade_for_id_id ?? schicht.trade_for_id
+        self.trade_for_id = trade_for_id_id 
     }
 }

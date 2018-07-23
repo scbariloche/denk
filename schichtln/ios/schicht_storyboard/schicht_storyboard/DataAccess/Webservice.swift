@@ -130,11 +130,18 @@ func get_open_schicht_by_user(user: User, on_success: @escaping([Schicht]) -> Vo
 }
 
 
-func delete_schicht(schicht: Schicht, on_success: @escaping() -> Void) {
-    
-    Alamofire.request("\(url)schicht/\(schicht.id)",method:.delete).response { response in
-        on_success()
-    }
+func delete_schicht(schicht: Schicht, on_success: @escaping() -> Void, on_error: @escaping(String) -> Void) {
+    get_schicht_by_id(id:schicht.id, on_success:{ it in
+        if it.is_same_as(schicht: schicht){
+        Alamofire.request("\(url)schicht/\(schicht.id)",method:.delete).response { response in
+            on_success()
+            }}else{
+            on_error("schicht wurde bereits geändert")
+        }
+
+    },on_error:{ error in
+        on_error("\(error.hashValue)")
+    })
 }
 
 func get_schicht_by_id(id: Int, on_success: @escaping( Schicht) -> Void, on_error: @escaping (WebserviceError) -> Void) {
@@ -181,25 +188,31 @@ func update_schicht(oldschicht: Schicht, newschicht: Schicht2Change, on_success:
         
         
     }, on_error: { it in
-        
+        on_error(it)
     })
     
     
 }
 
 
-//func create_schicht(newschicht: Schicht2Change, on_success: @escaping() -> Void, on_error: @escaping (WebserviceError) -> Void) {
-//    val request = Alamofire.post("\(url)schicht/")
-//    request.headers["Content-Type"] = "application/json"
-//    request.body(gson.toJson(newschicht)).response { response in
-//        if (result.component2() == null) {
-//            on_success()
-//        } else {
-//            on_error(result.component2()!!)
-//        }
-//    }
-//}
-//
+func create_schicht(newschicht: Schicht2Change, on_success: @escaping() -> Void, on_error: @escaping (WebserviceError) -> Void) {
+    let encoder = JSONEncoder()
+    encoder.dateEncodingStrategy = .formatted(Formatter.iso8601)
+    let jsonData = try! encoder.encode(newschicht)
+    var request = URLRequest(url: URL(string:"\(url)schicht/")!)
+    request.httpMethod = HTTPMethod.post.rawValue
+    request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+    request.httpBody = jsonData
+
+
+
+    Alamofire.request(request).responseJSON{it in
+        on_success()
+    }
+
+
+}
+
 func get_all_types_(on_success: @escaping([Type]) -> Void, on_error: @escaping (WebserviceError) -> Void) {
 
 

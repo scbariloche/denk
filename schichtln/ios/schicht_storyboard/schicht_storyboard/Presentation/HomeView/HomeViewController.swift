@@ -14,15 +14,22 @@ import PopupDialog
 class HomeViewController: UIViewController {
     @IBAction func btn_logout(_ sender: Any) {
         let popup = PopupDialog(title: "really?", message: "really, really?")
-       let btn_yep = DefaultButton(title: "yep", dismissOnTap: false){
-        popup.dismiss( {StoredValues.user=nil
-            LoginService.callLoginDialog(from: self, completion: {user in })})
-
+        let btn_yep = DefaultButton(title: "yep", dismissOnTap: false){
+            popup.dismiss({
+                StoredValues.user = nil
+                LoginService.callLoginDialog(from: self,
+                                             completion: {
+                                                user in
+                                                self.init_view(for: user)
+                })
+                }
+            )
         }
-popup.addButton(btn_yep)
+        popup.addButton(btn_yep)
         self.present(popup,animated: true , completion: nil)
     }
 
+    @IBOutlet weak var btn_logout: UIBarButtonItem!
 
     var tabs: [ViewPagerTab] = [
         ViewPagerTab(title: "Kalender", image: UIImage(named: "calendar")),
@@ -35,6 +42,16 @@ popup.addButton(btn_yep)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let user = StoredValues.user{
+            init_view(for: user)
+        }else{
+            LoginService.callLoginDialog(from: self) { (user) in
+                self.init_view(for: user)
+            }
+        }
+    }
+    fileprivate func init_view(for user :User) {
+        btn_logout.title = "\(user.username) ausloggen"
 
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
 
@@ -52,9 +69,6 @@ popup.addButton(btn_yep)
         options.isEachTabEvenlyDistributed = true
         options.fitAllTabsInView = true
 
-
-        
-
         self.viewPager = ViewPagerController()
         self.viewPager.options = self.options
         self.viewPager.dataSource = self
@@ -64,10 +78,6 @@ popup.addButton(btn_yep)
         self.view.addSubview( self.viewPager.view)
         self.viewPager.didMove(toParentViewController: self)
         self.viewPager.invalidateTabs()
-
-
-
-
     }
 
     override func viewWillLayoutSubviews() {

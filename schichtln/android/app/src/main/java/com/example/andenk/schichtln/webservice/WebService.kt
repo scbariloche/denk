@@ -197,11 +197,20 @@ fun get_open_schicht_by_user(user: User, on_success: (MutableList<Any>) -> Unit,
 }
 
 
-fun delete_schicht(schicht: Schicht, on_success: () -> Unit) {
+fun delete_schicht(schicht: Schicht, on_success: () -> Unit, on_error: (errorString: String) -> Unit) {
+    get_schicht_by_id(schicht.id,
+            on_success = {
+                if (it.is_same_as(schicht)) {
+                    Fuel.delete("${url}schicht/${schicht.id}").response { request, response, result ->
+                        on_success()
+                    }
+                } else {
+                    on_error("schicht wurde schon geändert")
+                }
+            }, on_error = {
+        on_error(it.localizedMessage)
 
-    Fuel.delete("${url}schicht/${schicht.id}").response { request, response, result ->
-        on_success()
-    }
+    })
 }
 
 fun get_schicht_by_id(id: Long, on_success: (schicht: Schicht) -> Unit, on_error: (FuelError) -> Unit) {
@@ -215,25 +224,25 @@ fun get_schicht_by_id(id: Long, on_success: (schicht: Schicht) -> Unit, on_error
     }
 }
 
-fun update_schicht(oldschicht: Schicht, newschicht: Schicht2Change, on_success: () -> Unit, on_error: (errorString: String) -> Unit,check_if_changed:Boolean=true) {
+fun update_schicht(oldschicht: Schicht, newschicht: Schicht2Change, on_success: () -> Unit, on_error: (errorString: String) -> Unit, check_if_changed: Boolean = true) {
 
-    get_schicht_by_id(newschicht.id, {
-        if (it.is_same_as(oldschicht)||!check_if_changed) {
-            val request = Fuel.post("${url}changeschicht/${newschicht.id}/")
-            request.headers["Content-Type"] = "application/json"
-            request.body(gson.toJson(newschicht)).response { request, response, result ->
-                if (result.component2() == null) {
-                    on_success()
+    get_schicht_by_id(newschicht.id,
+            on_success = {
+                if (it.is_same_as(oldschicht) || !check_if_changed) {
+                    val request = Fuel.post("${url}changeschicht/${newschicht.id}/")
+                    request.headers["Content-Type"] = "application/json"
+                    request.body(gson.toJson(newschicht)).response { request, response, result ->
+                        if (result.component2() == null) {
+                            on_success()
+                        } else {
+                            on_error(result.component2()!!.localizedMessage)
+                        }
+                    }
                 } else {
-                    on_error(result.component2()!!.localizedMessage)
+                    on_error("schicht wurde schon geändert")
                 }
-            }
-        } else {
-            on_error("schicht wurde schon geändert")
-        }
-
-
-    }, {})
+            },
+            on_error = { on_error("schicht wurde schon geändert") })
 
 
 }
