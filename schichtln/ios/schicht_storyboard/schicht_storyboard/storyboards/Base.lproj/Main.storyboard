@@ -34,7 +34,7 @@
         <scene sceneID="bCz-LR-ARr">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="xmi-sL-MBC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" selectedImage="ic_home_white_18pt" id="IT4-7R-HA6"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="IT4-7R-HA6"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Rg-z2-hk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,7 +61,4 @@
             <point key="canvasLocation" x="308" y="-58"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ic_home_white_18pt" width="18" height="18"/>
-    </resources>
 </document>
